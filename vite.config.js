@@ -11,6 +11,9 @@ try {
     fs.cpSync(sourceFolder, targetFolder, { recursive: true });
     console.log('[Classic Edge] Successfully copied images and abaya.pdf to public/images-and-pdf');
   }
+} catch (err) {
+  // Ignored if folder does not exist
+}
 
 // Automatically extract 27 abaya products from abaya.pdf if not already extracted
 try {

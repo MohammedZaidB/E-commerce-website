@@ -205,7 +205,7 @@ export default function Navbar({ onOpenQuoteModal }) {
         </nav>
 
         {/* Right Action Icons: Search, Quote, Cart & Mobile Toggle */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+        <div className="header-actions">
           {/* Search Bar / Icon */}
           {searchOpen ? (
             <form onSubmit={handleSearchSubmit} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -223,7 +223,7 @@ export default function Navbar({ onOpenQuoteModal }) {
                   color: '#fff',
                   fontSize: '12px',
                   outline: 'none',
-                  width: '140px'
+                  width: '120px'
                 }}
               />
               <button 
@@ -252,6 +252,7 @@ export default function Navbar({ onOpenQuoteModal }) {
           ) : (
             <button 
               type="button" 
+              className="header-action-btn header-search-btn"
               onClick={() => setSearchOpen(true)}
               aria-label="Search catalog"
               style={{ color: '#d1cdbf', background: 'none', border: 'none', cursor: 'pointer', padding: '6px', display: 'flex', alignItems: 'center' }}
@@ -266,6 +267,7 @@ export default function Navbar({ onOpenQuoteModal }) {
           {/* User Account / Partnership Quick Modal Icon */}
           <button
             type="button"
+            className="header-action-btn header-account-btn"
             onClick={onOpenQuoteModal}
             title="Account / Wholesale Inquiries"
             aria-label="Wholesale Inquiries"
@@ -280,6 +282,7 @@ export default function Navbar({ onOpenQuoteModal }) {
           {/* Shopping Cart Icon with golden badge */}
           <NavLink 
             to="/cart" 
+            className="header-action-btn header-cart-link"
             onClick={handleLinkClick}
             style={{
               display: 'flex',
