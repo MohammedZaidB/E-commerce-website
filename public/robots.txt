@@ -1,0 +1,5 @@
+# Robots.txt for Classic Edge B2B Website
+User-agent: *
+Allow: /
+
+Sitemap: https://classicedge-exports.com/sitemap.xml

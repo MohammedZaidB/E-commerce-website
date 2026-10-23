@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Classic Edge Atelier - Monogram Calibration</title>
+  <style>
+    body {
+      background: #070709;
+      color: #E6E6E6;
+      font-family: 'Cinzel', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, serif;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      margin: 0;
+    }
+    h1 {
+      color: #C5A059;
+      font-size: 26px;
+      letter-spacing: 4px;
+      margin: 0;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    p {
+      color: #999;
+      margin: 0 0 20px 0;
+      font-size: 14px;
+      font-family: sans-serif;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      width: 100%;
+    }
+    .card {
+      background: #101014;
+      border: 1px solid rgba(197, 160, 89, 0.25);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+    .card h3 {
+      color: #E2BF72;
+      font-size: 15px;
+      letter-spacing: 2px;
+      margin-top: 0;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .img-box {
+      width: 100%;
+      height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #1a1a22;
+    }
+    .img-box img, .img-box object {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+    .preview-bar {
+      margin-top: 20px;
+      padding: 16px 28px;
+      background: rgba(13, 13, 14, 0.95);
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .preview-bar img {
+      height: 48px;
+      width: auto;
+      filter: drop-shadow(0 2px 8px rgba(197, 160, 89, 0.3));
+    }
+    .brand-title {
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: #E5C276;
+    }
+    .brand-sub {
+      font-family: sans-serif;
+      font-size: 8.5px;
+      letter-spacing: 2px;
+      color: #C5A059;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+  <h1>Classic Edge Atelier</h1>
+  <p>Vector Monogram Calibration vs Reference</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>1. Reference Image (Uploaded)</h3>
+      <div class="img-box">
+        <img src="C:/Users/MD ZAID/.gemini/antigravity-ide/brain/74b4a465-7cfd-4adf-9442-ab6f2bfd09ab/.user_uploaded/media_1791640749899.png" alt="Uploaded Reference">
+      </div>
+    </div>
+    <div class="card">
+      <h3>2. Precision Vector SVG Mark</h3>
+      <div class="img-box">
+        <img src="public/logo.svg" alt="New Logo Vector">
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-bar">
+    <img src="public/logo.svg" alt="Header Logo Preview">
+    <div>
+      <div class="brand-title">CLASSIC EDGE</div>
+      <div class="brand-sub">ATELIER · LEATHER GOODS · SHOES · ACCESSORIES</div>
+    </div>
+  </div>
+</body>
+</html>

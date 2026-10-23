@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Rich Brushed Luxury Gold Gradients matching uploaded reference -->
+    <linearGradient id="goldSheen" x1="12%" y1="0%" x2="88%" y2="100%">
+      <stop offset="0%" stop-color="#FCF3D9" />
+      <stop offset="14%" stop-color="#E8CB81" />
+      <stop offset="36%" stop-color="#C59B46" />
+      <stop offset="55%" stop-color="#F4DF9F" />
+      <stop offset="72%" stop-color="#C39749" />
+      <stop offset="88%" stop-color="#996E25" />
+      <stop offset="100%" stop-color="#734F18" />
+    </linearGradient>
+
+    <!-- Highlight Sheen for Wave and Terminals -->
+    <linearGradient id="waveGold" x1="0%" y1="15%" x2="100%" y2="85%">
+      <stop offset="0%" stop-color="#D9B462" />
+      <stop offset="22%" stop-color="#FFF7E2" />
+      <stop offset="48%" stop-color="#E5C276" />
+      <stop offset="78%" stop-color="#C59B46" />
+      <stop offset="100%" stop-color="#966C23" />
+    </linearGradient>
+
+    <!-- Deep 3D Emboss & Drop Shadow -->
+    <filter id="monogramDepth" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="3" dy="6" stdDeviation="4.5" flood-color="#000000" flood-opacity="0.85" />
+      <feDropShadow dx="1" dy="2" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.95" />
+    </filter>
+
+    <!-- Brushed Foil Texture Overlay -->
+    <filter id="brushedGoldFoil" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65 0.95" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.12 0" in="noise" result="coloredNoise" />
+      <feComposite operator="in" in="coloredNoise" in2="SourceGraphic" result="textureApplied" />
+      <feBlend mode="overlay" in="textureApplied" in2="SourceGraphic" />
+    </filter>
+  </defs>
+
+  <!-- INTERTWINED 'CE' MONOGRAM -->
+  <g filter="url(#monogramDepth)">
+    <!-- ==========================================
+         LETTER C (Large Roman Crescent Arc)
+         ========================================== -->
+    <path d="
+      M 316,142 
+      L 316,192 
+      L 298,166 
+      C 285,140 260,128 234,128 
+      C 160,128 112,186 112,284 
+      C 112,376 156,422 228,422 
+      C 246,422 258,426 266,430 
+      C 252,438 236,440 220,440 
+      C 134,440 72,380 72,284 
+      C 72,176 140,112 236,112 
+      C 274,112 304,125 316,142 
+      Z" 
+      fill="url(#goldSheen)" />
+
+    <!-- ==========================================
+         LETTER E (Vertical Stem & Top/Bottom Arms)
+         ========================================== -->
+    <path d="
+      M 216,208 
+      L 236,208 
+      L 388,208 
+      L 388,265 
+      C 388,250 378,224 362,224 
+      L 274,224 
+      L 274,424 
+      L 366,424 
+      C 388,424 398,392 398,375 
+      L 398,440 
+      L 212,440 
+      C 220,432 236,430 236,422 
+      L 236,224 
+      C 236,216 222,212 216,208 
+      Z" 
+      fill="url(#goldSheen)" />
+
+    <!-- ==========================================
+         FLOWING WAVE RIBBON (Middle Crossbar)
+         ========================================== -->
+    <path d="
+      M 132,322 
+      C 158,294 194,276 236,276 
+      C 256,276 274,280 292,288 
+      C 314,298 336,310 350,310 
+      C 356,306 360,295 362,286 
+      C 358,312 344,336 316,336 
+      C 288,336 272,318 252,304 
+      C 232,292 196,298 162,310 
+      Z" 
+      fill="url(#waveGold)" />
+
+    <!-- Spur beneath wave on right edge of E stem -->
+    <path d="
+      M 274,314 
+      L 288,332 
+      L 274,350 
+      Z" 
+      fill="url(#goldSheen)" />
+  </g>
+</svg>

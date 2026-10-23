@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="favGold" x1="12%" y1="0%" x2="88%" y2="100%">
+      <stop offset="0%" stop-color="#FCF3D9" />
+      <stop offset="25%" stop-color="#E8CB81" />
+      <stop offset="55%" stop-color="#C59B46" />
+      <stop offset="85%" stop-color="#996E25" />
+      <stop offset="100%" stop-color="#734F18" />
+    </linearGradient>
+    <linearGradient id="favWave" x1="0%" y1="20%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#D9B462" />
+      <stop offset="30%" stop-color="#FFF7E2" />
+      <stop offset="70%" stop-color="#C59B46" />
+      <stop offset="100%" stop-color="#966C23" />
+    </linearGradient>
+  </defs>
+
+  <rect width="100" height="100" rx="20" fill="#0A0A0C" />
+  <rect x="2" y="2" width="96" height="96" rx="18" fill="none" stroke="url(#favGold)" stroke-width="1" opacity="0.4" />
+
+  <!-- CE Monogram scaled to fit 100x100 favicon -->
+  <g transform="translate(50, 50) scale(0.21) translate(-245, -276)">
+    <!-- C -->
+    <path d="
+      M 316,142 
+      L 316,192 
+      L 298,166 
+      C 285,140 260,128 234,128 
+      C 160,128 112,186 112,284 
+      C 112,376 156,422 228,422 
+      C 246,422 258,426 266,430 
+      C 252,438 236,440 220,440 
+      C 134,440 72,380 72,284 
+      C 72,176 140,112 236,112 
+      C 274,112 304,125 316,142 
+      Z" 
+      fill="url(#favGold)" />
+
+    <!-- E -->
+    <path d="
+      M 216,208 
+      L 236,208 
+      L 388,208 
+      L 388,265 
+      C 388,250 378,224 362,224 
+      L 274,224 
+      L 274,424 
+      L 366,424 
+      C 388,424 398,392 398,375 
+      L 398,440 
+      L 212,440 
+      C 220,432 236,430 236,422 
+      L 236,224 
+      C 236,216 222,212 216,208 
+      Z" 
+      fill="url(#favGold)" />
+
+    <!-- Wave -->
+    <path d="
+      M 132,322 
+      C 158,294 194,276 236,276 
+      C 256,276 274,280 292,288 
+      C 314,298 336,310 350,310 
+      C 356,306 360,295 362,286 
+      C 358,312 344,336 316,336 
+      C 288,336 272,318 252,304 
+      C 232,292 196,298 162,310 
+      Z" 
+      fill="url(#favWave)" />
+
+    <!-- Spur -->
+    <path d="
+      M 274,314 
+      L 288,332 
+      L 274,350 
+      Z" 
+      fill="url(#favGold)" />
+  </g>
+</svg>

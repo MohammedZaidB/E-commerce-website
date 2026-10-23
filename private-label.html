@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Label & OEM Manufacturing — Classic Edge Atelier</title>
+  <meta name="description" content="Custom private label leather footwear, bags and accessories manufacturing in India. Logo embossing, custom hardware, bespoke packaging for GCC brands.">
+  
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
+  
+  <!-- Luxury Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800&family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="header">
+    <a href="index.html" class="header-brand">
+      <img src="public/logo.svg" alt="Classic Edge Atelier Logo" class="brand-logo-img">
+      <div class="brand-text-wrap">
+        <div class="brand-name">CLASSIC EDGE</div>
+        <div class="brand-subtitle">ATELIER · LEATHER FOOTWEAR & BAGS</div>
+      </div>
+    </a>
+
+    <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation">☰</button>
+
+    <nav class="nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="catalog.html" class="nav-link">Catalog</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="private-label.html" class="nav-link active">Private Label</a>
+      <a href="wholesale-export.html" class="nav-link">Wholesale & Export</a>
+      <a href="contact.html" class="nav-link nav-highlight">Partnership</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- INNER PAGE BANNER -->
+    <div class="inner-page-banner">
+      <div class="eyebrow">OEM / ODM Manufacturing Services</div>
+      <h1 class="inner-page-title">Your Brand. Our Manufacturing Precision.</h1>
+      <p class="inner-page-sub">
+        Custom logo embossing, specialized hardware casting, premium gift packaging, and tailored leather selection for fashion houses and retail labels.
+      </p>
+    </div>
+
+    <!-- MAIN PRIVATE LABEL CONTENT -->
+    <div class="private-label-wrap">
+      <div style="text-align: center; margin-bottom: 30px;">
+        <div class="eyebrow">Production Roadmap</div>
+        <h2 class="display" style="font-size: 26px; color: var(--gold-light);">Our 4-Step Customisation Workflow</h2>
+      </div>
+
+      <!-- WORKFLOW STEPS -->
+      <div class="step-box-grid">
+        <div class="step-box">
+          <div class="step-num">01</div>
+          <strong>Submit Design & Specs</strong>
+          <p style="font-size: 13px; color: #a6a39d; line-height: 1.6;">
+            Share tech packs, sketches, reference photos, target leather textures, or select models from our catalogue line-sheet.
+          </p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-num">02</div>
+          <strong>Feasibility & Tooling</strong>
+          <p style="font-size: 13px; color: #a6a39d; line-height: 1.6;">
+            We evaluate brass embossing dies, lasting moulds, minimum batch quantities (MOQ), and raw material lead times.
+          </p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-num">03</div>
+          <strong>Sample Approval</strong>
+          <p style="font-size: 13px; color: #a6a39d; line-height: 1.6;">
+            Receive tangible prototypes with your custom branded insole, debossed logo, and sample packaging for full tactile review.
+          </p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-num">04</div>
+          <strong>Bulk Production & Freight</strong>
+          <p style="font-size: 13px; color: #a6a39d; line-height: 1.6;">
+            Scheduled batch manufacturing, strict quality inspection, barcoding, master carton packing, and direct export dispatch.
+          </p>
+        </div>
+      </div>
+
+      <!-- BRANDING POSSIBILITIES -->
+      <div style="margin: 60px 0;">
+        <div style="text-align: center; margin-bottom: 30px;">
+          <div class="eyebrow">Customisation Elements</div>
+          <h2 class="display" style="font-size: 24px; color: var(--gold-light);">What You Can Customise</h2>
+        </div>
+
+        <div class="feature-cards-grid">
+          <div class="feature-card">
+            <h3>Embossing & Foil Stamping</h3>
+            <p>Blind debossing, hot gold metallic foil, silver foil, or laser-etched insignia on footwear tongues, footbeds, wallet fronts, and belt tips.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Custom Metal Hardware</h3>
+            <p>Solid brass or zinc alloy buckles, zipper pulls, and snap hooks electroplated in Antique Brass, Brushed Gold, Gunmetal, or Matte Black.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Packaging & Presentation</h3>
+            <p>Custom rigid drawer boxes, magnetic closure gift boxes, velvet or satin dust bags, printed tissue paper, and hangtags with EAN barcodes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CALL TO ACTION -->
+      <div style="background: var(--surface-dark); border: 1px solid var(--gold-border); padding: 36px; border-radius: 4px; text-align: center;">
+        <h3 style="font-family:'Cinzel',serif; font-size: 20px; color: var(--gold-light); margin-bottom: 10px;">
+          Start Your Brand's Production Run
+        </h3>
+        <p style="color: #aba69d; font-size: 14px; max-width: 580px; margin: 0 auto 24px;">
+          Send your tech pack or contact our workshop manager directly on WhatsApp to discuss tooling feasibility and sample turnarounds.
+        </p>
+        <button type="button" class="cta" onclick="openQuoteModal('Private Label Production', 'Private Label')">
+          Request Private Label Quote &rarr;
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <img src="public/logo.svg" alt="Classic Edge Atelier" class="footer-logo">
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="catalog.html">Catalog</a>
+      <a href="about.html">About Us</a>
+      <a href="private-label.html">Private Label</a>
+      <a href="wholesale-export.html">Wholesale</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://wa.me/919443750820" target="_blank" rel="noopener noreferrer">WhatsApp Desk</a>
+    </div>
+    <!-- Clickable Prominent Contact Bar with Gmail Logo & Larger Font -->
+    <div class="footer-contact-bar">
+      <a href="mailto:classicedgeatlier@gmail.com" class="contact-chip contact-chip-email" title="Click to email via Gmail">
+        <svg class="contact-icon-svg" viewBox="0 0 48 48" aria-hidden="true">
+          <path fill="#4caf50" d="M45,16.2l-5,2.75l-5,4.75L35,40h7c1.657,0,3-1.343,3-3V16.2z"></path>
+          <path fill="#1e88e5" d="M3,16.2l3.614,1.71L13,23.7V40H6c-1.657,0-3-1.343-3-3V16.2z"></path>
+          <polygon fill="#e53935" points="35,11.2 24,19.45 13,11.2 12,17 13,23.7 24,31.95 35,23.7 36,17"></polygon>
+          <path fill="#c62828" d="M3,12.298V16.2l10,7.5V11.2L9.876,8.859C8.132,7.553,5.637,8.083,4.516,9.986L3,12.298z"></path>
+          <path fill="#fbc02d" d="M45,12.298V16.2l-10,7.5V11.2l3.124-2.341c1.744-1.306,4.239-0.776,5.36,1.127L45,12.298z"></path>
+        </svg>
+        <span>classicedgeatlier@gmail.com</span>
+      </a>
+
+      <a href="https://wa.me/919443750820" target="_blank" rel="noopener noreferrer" class="contact-chip contact-chip-wa" title="Click to chat on WhatsApp">
+        <svg class="contact-icon-svg" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
+          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.84a8.18 8.18 0 0 1-5.83 2.41c-1.45 0-2.88-.39-4.14-1.13l-.3-.18-3.08.81.82-3-.2-.31c-.8-1.27-1.23-2.75-1.23-4.27 0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/>
+        </svg>
+        <span>+91 9443750820</span>
+      </a>
+
+      <a href="contact.html" class="contact-chip" style="border-color: var(--gold-border); color: var(--gold-light);">
+        <span>🏛️ Direct Partnership Desk &rarr;</span>
+      </a>
+    </div>
+
+    <div style="font-size:13px; color:#8c877e; margin-bottom:8px;">
+      Country of Origin: India · Target: UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman
+    </div>
+    <div>&copy; 2026 Classic Edge Atelier. All rights reserved.</div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/919443750820" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" title="WhatsApp Export Desk">
+    💬
+  </a>
+
+  <!-- GLOBAL QUICK QUOTE MODAL -->
+  <div class="quote-modal-backdrop" id="globalQuoteModal">
+    <div class="quote-modal-dialog">
+      <button class="modal-close-btn" onclick="closeQuoteModal()" aria-label="Close modal">&times;</button>
+      <div class="eyebrow" style="margin-bottom: 8px;">Direct Export Desk</div>
+      <h3 style="font-family:'Cinzel',serif; font-size: 20px; color: var(--gold-light); margin-bottom: 18px;">Quick Wholesale Quotation Request</h3>
+      
+      <form onsubmit="handleModalSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" class="form-input" id="modal-name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Company Name *</label>
+          <input type="text" class="form-input" id="modal-company" placeholder="Company / Trading LLC" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Country & City *</label>
+          <input type="text" class="form-input" id="modal-country" placeholder="e.g. UAE / Dubai, Saudi Arabia / Riyadh" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Product Collection *</label>
+          <select class="form-select" id="modal-category">
+            <option value="Private Label Footwear">Private Label Footwear</option>
+            <option value="Private Label Wallets & Bags">Private Label Wallets & Bags</option>
+            <option value="Leather Shoes">Leather Shoes</option>
+            <option value="Arabic Slippers">Arabic Slippers</option>
+            <option value="Leather Belts">Leather Belts</option>
+            <option value="Textiles & Garments">Textiles & Garments</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Estimated Order Quantity</label>
+          <input type="text" class="form-input" id="modal-qty" placeholder="e.g. 200 pairs, 500 units">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message & Specifications</label>
+          <textarea class="form-textarea" id="modal-msg" rows="3" placeholder="Detail your branding, packaging or sample requests..."></textarea>
+        </div>
+        <button type="submit" class="cta" style="width: 100%;">Send Inquiry via WhatsApp &rarr;</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="site.js"></script>
+</body>
+</html>

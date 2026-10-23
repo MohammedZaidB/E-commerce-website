@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classic Edge Atelier — Luxury Leather Footwear, Bags & Accessories</title>
+  
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
+  
+  <!-- Luxury Typography: Cinzel / Playfair Display & Plus Jakarta Sans / Roboto Condensed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800&family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Theme matched to Logo: Matte Onyx Black & Brushed Metallic Gold */
+      --ink: #0b0b0d;
+      --surface-dark: #121215;
+      --surface-elevated: #1a1a1f;
+      --border-dark: #2a2a32;
+      
+      --gold-primary: #c5a059;
+      --gold-light: #f5e2b8;
+      --gold-deep: #9e7b35;
+      --gold-border: rgba(197, 160, 89, 0.35);
+      --gold-glow: rgba(197, 160, 89, 0.15);
+      
+      --paper: #ffffff;
+      --concrete: #141418;
+      --text-main: #f5f3ef;
+      --text-muted: #a6a39d;
+      --text-dark: #121215;
+      
+      --whatsapp: #25D366;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { 
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; 
+      color: var(--text-main); 
+      background: var(--ink); 
+      overflow-x: hidden; 
+      line-height: 1.6; 
+    }
+    
+    .font-serif { font-family: 'Cinzel', 'Playfair Display', serif; }
+    .display { font-family: 'Cinzel', serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* Gold Gradient Text Utility */
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #FBF0D1 0%, #D5B064 45%, #AA7E2D 85%, #E2C27E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      position: sticky;
+      top: 0;
+      background: rgba(11, 11, 13, 0.95);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--gold-border);
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      filter: drop-shadow(0 2px 8px rgba(197, 160, 89, 0.25));
+    }
+
+    .brand-text-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: 'Cinzel', serif;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .brand-subtitle {
+      font-size: 8.5px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #8c8983;
+      margin-top: 3px;
+    }
+
+    .nav { display: flex; gap: 26px; align-items: center; }
+    .nav a {
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 4px;
+      color: #ded9d0;
+      transition: color 0.2s ease;
+    }
+    .nav a::after {
+      content:'';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold-primary);
+      transition: width 0.25s ease;
+    }
+    .nav a:hover { color: #ffffff; }
+    .nav a:hover::after { width: 100%; }
+
+    .nav a.nav-highlight {
+      background: linear-gradient(135deg, #d5b064 0%, #aa7e2d 100%);
+      color: #0b0b0d !important;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 2px;
+      box-shadow: 0 4px 14px rgba(197, 160, 89, 0.3);
+    }
+    .nav a.nav-highlight::after { display: none; }
+    .nav a.nav-highlight:hover { filter: brightness(1.1); }
+
+    .lang-switcher select {
+      font-family: inherit;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 2px;
+      border: 1px solid var(--gold-border);
+      background: var(--surface-dark);
+      color: var(--gold-light);
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* Hero */
+    .hero {
+      background: radial-gradient(circle at 50% 30%, #1c1c22 0%, #0b0b0d 75%);
+      color: white;
+      padding: 95px 40px 120px;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--gold-border);
+    }
+
+    .hero-emblem-wrap {
+      margin: 0 auto 24px;
+      max-width: 220px;
+      opacity: 0.95;
+      animation: floatSlow 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatSlow {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-6px); }
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 46px;
+      line-height: 1.25;
+      max-width: 880px;
+      margin: 0 auto 22px;
+      letter-spacing: 2px;
+    }
+
+    .hero p.sub {
+      font-size: 15.5px;
+      color: #b5b1a8;
+      max-width: 580px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    .hero .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Buttons */
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #d5b064 0%, #aa7e2d 100%);
+      color: #0b0b0d;
+      padding: 14px 32px;
+      font-family: 'Cinzel', serif;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(197, 160, 89, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(197, 160, 89, 0.5); }
+
+    .cta-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--gold-border);
+      color: var(--gold-light);
+      padding: 14px 32px;
+      font-family: 'Cinzel', serif;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      background: rgba(197, 160, 89, 0.05);
+    }
+    .cta-ghost:hover { border-color: var(--gold-light); background: rgba(197, 160, 89, 0.15); transform: translateY(-2px); }
+
+    .cta-catalogue {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+      color: #0b0b0d !important;
+      padding: 14px 30px;
+      font-family: 'Cinzel', serif;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+    }
+    .cta-catalogue:hover { background: #f0ede6; transform: translateY(-2px); }
+
+    .cta-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--whatsapp);
+      color: white;
+      padding: 14px 28px;
+      font-family: 'Cinzel', serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .cta-whatsapp:hover { background: #1eb956; }
+
+    .hero-trust-line {
+      margin-top: 30px;
+      font-size: 12.5px;
+      color: #8c8880;
+      letter-spacing: 0.5px;
+    }
+
+    /* Promo Banner: Stacked Card Deck */
+    .promo-banner {
+      padding: 60px 40px;
+      background: var(--surface-dark);
+      text-align: center;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .promo-hero {
+      position: relative;
+      max-width: 320px;
+      margin: 0 auto;
+      height: 380px;
+      cursor: pointer;
+    }
+    .promo-card {
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #18181d;
+      border: 1px solid var(--gold-border);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+      transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease;
+      user-select: none;
+    }
+    .promo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.92;
+    }
+    .promo-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 2px;
+      color: #0b0b0d;
+      background: linear-gradient(135deg, #f3dc9b 0%, #c59b46 100%);
+    }
+    .promo-name {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 34px 16px 16px;
+      font-family: 'Cinzel', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: white;
+      background: linear-gradient(to top, rgba(11,11,13,0.92), transparent);
+      text-align: left;
+    }
+    .promo-hint {
+      text-align: center;
+      font-size: 11px;
+      color: var(--gold-primary);
+      margin-top: 20px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Category Strip - "What We Stock" */
+    .category-strip {
+      padding: 70px 40px;
+      border-bottom: 1px solid var(--border-dark);
+      text-align: center;
+      background: var(--ink);
+    }
+    .category-photo-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .category-photo-card {
+      display: block;
+      width: 150px;
+      text-align: center;
+      cursor: pointer;
+      background: var(--surface-dark);
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border-dark);
+      transition: all 0.3s ease;
+    }
+    .category-photo-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold-primary);
+      box-shadow: 0 10px 25px rgba(197, 160, 89, 0.2);
+    }
+    .category-photo-card img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .category-photo-card span {
+      display: block;
+      margin-top: 10px;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold-light);
+      letter-spacing: 1px;
+    }
+    .category-card-cta-badge {
+      font-size: 9px;
+      color: var(--gold-primary);
+      display: block;
+      margin-top: 3px;
+      opacity: 0.8;
+    }
+
+    /* Catalogue Download Banner */
+    .catalogue-download-bar {
+      margin-top: 40px;
+      background: linear-gradient(135deg, rgba(197,160,89,0.12) 0%, rgba(20,20,24,0.8) 100%);
+      border: 1px solid var(--gold-border);
+      border-radius: 6px;
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .catalogue-bar-text {
+      text-align: left;
+    }
+    .catalogue-bar-title {
+      font-family: 'Cinzel', serif;
+      font-size: 17px;
+      color: var(--gold-light);
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .catalogue-bar-sub {
+      font-size: 13px;
+      color: #a8a49c;
+    }
+
+    /* About Section */
+    .about {
+      padding: 95px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about .pull {
+      font-family: 'Cinzel', serif;
+      font-size: 32px;
+      text-transform: uppercase;
+      line-height: 1.35;
+      letter-spacing: 1px;
+    }
+    .about .pull span { color: var(--gold-primary); }
+    .about-body p {
+      color: #aba69d;
+      font-size: 14.5px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .stat-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px 32px;
+      margin-top: 26px;
+    }
+    .stat { min-width: 100px; }
+    .stat .num {
+      font-family: 'Cinzel', serif;
+      font-size: 32px;
+      color: var(--gold-primary);
+      font-weight: 700;
+    }
+    .stat .label {
+      font-size: 10.5px;
+      color: #8c8983;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    /* Shoecase / Cinematic Shelf */
+    .shoecase {
+      background: #08080a;
+      padding: 0;
+      position: relative;
+      border-top: 1px solid var(--border-dark);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .shoecase-eyebrow {
+      position: absolute;
+      top: 28px;
+      left: 40px;
+      z-index: 3;
+      color: var(--gold-primary);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .shoecase-stage {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      min-height: 420px;
+      max-height: 600px;
+      overflow: hidden;
+    }
+    .shoecase-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1s ease;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .shoecase-slide.active { opacity: 1; }
+    .shoecase-bg {
+      position: absolute;
+      inset: -20px;
+      width: calc(100% + 40px);
+      height: calc(100% + 40px);
+      object-fit: cover;
+      filter: blur(34px) brightness(0.35);
+      transform: scale(1.15);
+    }
+    .shoecase-main {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .shoecase-label {
+      position: absolute;
+      bottom: 32px;
+      left: 40px;
+      z-index: 3;
+      color: white;
+      font-family: 'Cinzel', serif;
+      font-size: 24px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+    }
+    .shoecase-progress {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 18px 0;
+      background: #08080a;
+    }
+    .shoecase-dot {
+      width: 28px;
+      height: 2px;
+      background: rgba(255,255,255,0.2);
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+    .shoecase-dot.active { background: var(--gold-primary); }
+
+    /* Packing Breakdown */
+    .packing {
+      background: var(--surface-dark);
+      padding: 95px 40px;
+    }
+    .packing-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .packing .eyebrow { color: var(--gold-primary); text-align: center; }
+    .packing h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 30px;
+      text-align: center;
+      margin-bottom: 46px;
+      letter-spacing: 2px;
+      color: var(--gold-light);
+    }
+    .packing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .packing-card {
+      background: var(--surface-elevated);
+      padding: 34px 24px;
+      border: 1px solid var(--border-dark);
+      border-top: 3px solid var(--gold-primary);
+      text-align: center;
+      border-radius: 4px;
+    }
+    .packing-card .qty {
+      font-family: 'Cinzel', serif;
+      font-size: 32px;
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+    .packing-card .desc {
+      font-size: 13px;
+      color: #9c978f;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    /* Contact Dark Bookend */
+    .contact {
+      background: var(--ink);
+      color: white;
+      padding: 95px 40px;
+      text-align: center;
+      border-top: 1px solid var(--gold-border);
+    }
+    .contact h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 32px;
+      margin-bottom: 40px;
+      letter-spacing: 2px;
+      color: var(--gold-light);
+    }
+    .locations {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 940px;
+      margin: 0 auto 46px;
+      text-align: left;
+    }
+    .location-card {
+      border-left: 2px solid var(--gold-primary);
+      padding-left: 16px;
+      background: rgba(255,255,255,0.02);
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .location-card .name {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 4px;
+      color: var(--gold-light);
+      letter-spacing: 1px;
+    }
+    .location-card .addr {
+      font-size: 13px;
+      color: #9c978f;
+      line-height: 1.5;
+    }
+    .contact-cta { margin-top: 10px; }
+    .contact-cta-msg { color: #ccc; font-size: 14px; margin-bottom: 12px; }
+    .contact-number {
+      display: inline-block;
+      color: var(--gold-light);
+      font-family: 'Cinzel', serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      border-bottom: 2px solid var(--gold-primary);
+      padding-bottom: 4px;
+      cursor: pointer;
+    }
+    .contact-number:hover { color: #ffffff; }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 44px 20px 30px;
+      font-size: 12px;
+      color: #7d7870;
+      border-top: 1px solid var(--border-dark);
+      background: #08080a;
+    }
+    .footer-logo {
+      height: 38px;
+      margin: 0 auto 18px;
+      filter: drop-shadow(0 2px 6px rgba(197, 160, 89, 0.2));
+    }
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .footer-nav a {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #b0aba0;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .footer-nav a:hover { color: var(--gold-primary); }
+    .footer-contact {
+      font-size: 12px;
+      color: #8c877e;
+      margin-bottom: 12px;
+    }
+    .footer-dot { margin: 0 6px; }
+
+    /* Floating WhatsApp Button */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--whatsapp);
+      color: white;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      z-index: 999;
+      cursor: pointer;
+      font-size: 26px;
+    }
+
+    /* ----------------------------------------------------
+       PRODUCT DUMMY GRID OVERLAY MODAL (CLICK ON CATEGORY)
+    ---------------------------------------------------- */
+    .product-grid-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 8, 10, 0.94);
+      backdrop-filter: blur(14px);
+      z-index: 3000;
+      display: none;
+      overflow-y: auto;
+      padding: 30px 20px;
+    }
+    .product-grid-modal.open { display: block; }
+
+    .modal-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--surface-dark);
+      border: 1px solid var(--gold-border);
+      border-radius: 8px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+      overflow: hidden;
+    }
+
+    .modal-top-bar {
+      background: var(--ink);
+      padding: 24px 32px;
+      border-bottom: 1px solid var(--gold-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .modal-category-title {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      color: var(--gold-light);
+      letter-spacing: 2px;
+    }
+    .modal-category-sub {
+      font-size: 12px;
+      color: #9c978e;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .modal-actions-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-download-pdf {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #d5b064 0%, #aa7e2d 100%);
+      color: #0b0b0d;
+      font-family: 'Cinzel', serif;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      padding: 10px 20px;
+      border-radius: 2px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(197, 160, 89, 0.3);
+    }
+    .btn-download-pdf:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+    .btn-modal-close {
+      background: rgba(255,255,255,0.08);
+      color: white;
+      border: 1px solid var(--border-dark);
+      width: 36px;
+      height: 36px;
+      border-radius: 2px;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .btn-modal-close:hover { background: rgba(255,255,255,0.18); border-color: var(--gold-primary); }
+
+    /* Dummy Options Grid */
+    .dummy-grid-container {
+      padding: 32px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .dummy-card {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-dark);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+    }
+    .dummy-card:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .dummy-card-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: #000;
+    }
+
+    .dummy-card-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .dummy-card-sku {
+      font-size: 10px;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+      color: var(--gold-primary);
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .dummy-card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 15px;
+      color: #ffffff;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .dummy-card-spec {
+      font-size: 12px;
+      color: #9e9a91;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .dummy-card-meta {
+      background: rgba(0,0,0,0.3);
+      border: 1px dashed var(--border-dark);
+      padding: 8px 10px;
+      border-radius: 2px;
+      font-size: 11px;
+      color: #b0aba0;
+      margin-bottom: 16px;
+      margin-top: auto;
+    }
+
+    .dummy-card-btn {
+      width: 100%;
+      background: var(--surface-dark);
+      color: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      padding: 10px;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .dummy-card-btn:hover {
+      background: var(--gold-primary);
+      color: #0b0b0d;
+      border-color: var(--gold-primary);
+    }
+
+    /* Standard Quote Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      z-index: 4000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: var(--surface-dark);
+      border: 1px solid var(--gold-border);
+      border-radius: 6px;
+      max-width: 500px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    }
+    .modal-head {
+      background: var(--ink);
+      color: var(--gold-light);
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .modal-head h3 { font-family: 'Cinzel', serif; font-size: 16px; letter-spacing: 1.5px; }
+    .modal-close { color: white; background: none; border: none; font-size: 20px; cursor: pointer; }
+    .modal-body { padding: 24px; font-size: 14px; }
+    .modal-body p { margin-bottom: 16px; color: #a8a49c; line-height: 1.6; }
+    .modal-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+
+    @media (max-width: 820px) {
+      .about { grid-template-columns: 1fr; gap: 30px; }
+      .packing-grid { grid-template-columns: 1fr; }
+      .locations { grid-template-columns: 1fr; text-align: center; }
+      .location-card { border-left: none; border-top: 2px solid var(--gold-primary); padding-left: 0; padding-top: 12px; }
+      .catalogue-download-bar { flex-direction: column; text-align: center; }
+      .catalogue-bar-text { text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .header { padding: 14px 18px; }
+      .nav { gap: 14px; }
+      .nav a { font-size: 11px; }
+      .hero { padding: 60px 18px 90px; }
+      .hero h1 { font-size: 30px; }
+      .brand-subtitle { display: none; }
+      .category-photo-card { width: 100px; padding: 8px; }
+      .category-photo-card img { height: 90px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-brand" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+      <img src="public/logo.svg" alt="Classic Edge Atelier Logo" class="brand-logo-img">
+      <div class="brand-text-wrap">
+        <div class="brand-name">CLASSIC EDGE</div>
+        <div class="brand-subtitle">ATELIER · LEATHER FOOTWEAR & BAGS</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#catalog">Catalog</a>
+      <a href="#packing">Packing</a>
+      <a href="javascript:void(0)" class="nav-highlight" onclick="openQuoteModal('B2B Wholesale Supply & Partnership')">Partnership</a>
+      <a href="#contact">Contact</a>
+
+      <div class="lang-switcher">
+        <select id="langSelect" onchange="changeLanguage(this.value)">
+          <option value="en" selected>English</option>
+          <option value="ar">العربية</option>
+          <option value="ur">اردو</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-emblem-wrap">
+      <img src="public/logo.svg" alt="Classic Edge Atelier Emblem" style="max-height: 140px; margin: 0 auto; filter: drop-shadow(0 4px 14px rgba(197,160,89,0.35));">
+    </div>
+
+    <div class="eyebrow" id="heroEyebrow">India · Wholesale Leather & Footwear Atelier</div>
+    <h1 id="heroTitle">
+      Your Shop's <span>Footwear & Leather</span> Partner from India
+    </h1>
+    <p class="sub" id="heroSub">
+      Handcrafted formal shoes, everyday slippers, wallets, bags, and belts. Direct manufacturer pricing, reliable bulk production, and an export desk that answers promptly on WhatsApp.
+    </p>
+
+    <div class="buttons">
+      <a href="#catalog" class="cta">Browse Collections</a>
+      <button type="button" class="cta-catalogue" onclick="downloadCatalogue('Full-Wholesale-Catalog')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Download Catalogue (PDF)
+      </button>
+      <a href="https://wa.me/919443750820" target="_blank" rel="noopener noreferrer" class="cta-whatsapp">
+        WhatsApp Desk
+      </a>
+    </div>
+
+    <p class="hero-trust-line">
+      Direct export desk supporting wholesale buyers across UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman.
+    </p>
+  </section>
+
+  <!-- PROMO BANNER: STACKED CARD DECK -->
+  <section class="promo-banner">
+    <div class="eyebrow">Right Now · Featured Lots</div>
+    <div class="promo-hero" id="promoDeck" onclick="dismissTopCard()" title="Click to view next lot">
+      <div class="promo-card" id="card0" style="transform: translateY(0px) scale(1); opacity: 1; z-index: 30;">
+        <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=700&q=80" alt="Bespoke Brogue 116">
+        <span class="promo-badge">Offer</span>
+        <span class="promo-name">Bespoke Brogue 116</span>
+      </div>
+      <div class="promo-card" id="card1" style="transform: translateY(14px) scale(0.96); opacity: 0.7; z-index: 20;">
+        <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=700&q=80" alt="Arabian Slide 04">
+        <span class="promo-badge">Fast Selling</span>
+        <span class="promo-name">Arabian Slide 04</span>
+      </div>
+      <div class="promo-card" id="card2" style="transform: translateY(26px) scale(0.92); opacity: 0.45; z-index: 10;">
+        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80" alt="Executive Messenger Bag">
+        <span class="promo-badge">New Arrival</span>
+        <span class="promo-name">Executive Messenger Bag</span>
+      </div>
+    </div>
+    <p class="promo-hint">Click card to swipe to next style</p>
+  </section>
+
+  <!-- WHAT WE STOCK STRIP -->
+  <section class="category-strip" id="catalog">
+    <div class="eyebrow">Product Collections</div>
+    <h2 class="display text-gold-gradient" style="font-size: 26px; margin-bottom: 8px;">What We Manufacture</h2>
+    <p style="color: #9e9a91; font-size: 13.5px; max-width: 600px; margin: 0 auto 24px;">
+      Click any category below to view sample grid options or download the complete wholesale line sheet.
+    </p>
+
+    <div class="category-photo-row">
+      <div class="category-photo-card" onclick="openProductGrid('Leather Shoes')">
+        <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=400&q=80" alt="Leather Shoes">
+        <span>Leather Shoes</span>
+        <span class="category-card-cta-badge">View Options &rarr;</span>
+      </div>
+      <div class="category-photo-card" onclick="openProductGrid('Arabic Slippers')">
+        <img src="https://images.unsplash.com/photo-1603808033192-082d6919d3e1?auto=format&fit=crop&w=400&q=80" alt="Arabic Slippers">
+        <span>Arabic Slippers</span>
+        <span class="category-card-cta-badge">View Options &rarr;</span>
+      </div>
+      <div class="category-photo-card" onclick="openProductGrid('Wallets')">
+        <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=400&q=80" alt="Leather Wallets">
+        <span>Wallets</span>
+        <span class="category-card-cta-badge">View Options &rarr;</span>
+      </div>
+      <div class="category-photo-card" onclick="openProductGrid('Bags')">
+        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=400&q=80" alt="Leather Bags">
+        <span>Leather Bags</span>
+        <span class="category-card-cta-badge">View Options &rarr;</span>
+      </div>
+      <div class="category-photo-card" onclick="openProductGrid('Belts')">
+        <img src="https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=400&q=80" alt="Leather Belts">
+        <span>Leather Belts</span>
+        <span class="category-card-cta-badge">View Options &rarr;</span>
+      </div>
+      <div class="category-photo-card" onclick="openProductGrid('Textiles & Garments')">
+        <img src="https://images.unsplash.com/photo-1584589167171-541ce45f1eea?auto=format&fit=crop&w=400&q=80" alt="Textiles & Garments">
+        <span>Textiles</span>
+        <span class="category-card-cta-badge">View Options &rarr;</span>
+      </div>
+    </div>
+
+    <!-- Download Bar -->
+    <div class="catalogue-download-bar">
+      <div class="catalogue-bar-text">
+        <div class="catalogue-bar-title">Official Wholesale Catalogue 2026</div>
+        <div class="catalogue-bar-sub">Download our complete export collection catalogue with carton details & packing specs.</div>
+      </div>
+      <button type="button" class="btn-download-pdf" onclick="downloadCatalogue('Full-Wholesale-Catalog')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Download PDF (Direct)
+      </button>
+    </div>
+  </section>
+
+  <!-- ABOUT & B2B STATS -->
+  <section class="about" id="about">
+    <div class="pull">
+      Classic Edge Atelier — Crafted in India for <span>the GCC & Global Markets.</span>
+    </div>
+    <div class="about-body">
+      <p>
+        Classic Edge Atelier is an India-based manufacturer and supplier of leather products and textiles, serving businesses seeking wholesale supply, bulk production, and customized private-label manufacturing. Our product range includes formal & casual leather shoes, Arabic slippers, wallets, bags, belts, and export-grade textiles.
+      </p>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="num">2,000+</div>
+          <div class="label">Customers Worldwide</div>
+        </div>
+        <div class="stat">
+          <div class="num">6</div>
+          <div class="label">GCC Target Markets</div>
+        </div>
+        <div class="stat">
+          <div class="num">7+</div>
+          <div class="label">Categories</div>
+        </div>
+        <div class="stat">
+          <div class="num">24/7</div>
+          <div class="label">WhatsApp Inquiries</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SHELF CINEMATIC SHOWCASE -->
+  <section class="shoecase">
+    <div class="shoecase-eyebrow">The Atelier Shelf</div>
+    <div class="shoecase-stage" id="shelfStage">
+      <div class="shoecase-slide active" id="slide0">
+        <img class="shoecase-bg" src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=1200&q=80" alt="">
+        <img class="shoecase-main" src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=1200&q=80" alt="Formal Shoes">
+        <span class="shoecase-label">Handcrafted Oxford & Brogue Collection</span>
+      </div>
+      <div class="shoecase-slide" id="slide1">
+        <img class="shoecase-bg" src="https://images.unsplash.com/photo-1603808033192-082d6919d3e1?auto=format&fit=crop&w=1200&q=80" alt="">
+        <img class="shoecase-main" src="https://images.unsplash.com/photo-1603808033192-082d6919d3e1?auto=format&fit=crop&w=1200&q=80" alt="Arabic Slippers">
+        <span class="shoecase-label">Traditional & Casual Arabian Slides</span>
+      </div>
+      <div class="shoecase-slide" id="slide2">
+        <img class="shoecase-bg" src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1200&q=80" alt="">
+        <img class="shoecase-main" src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1200&q=80" alt="Leather Bags">
+        <span class="shoecase-label">Executive Briefcases & Weekend Travel Bags</span>
+      </div>
+    </div>
+    <div class="shoecase-progress">
+      <span class="shoecase-dot active" onclick="setSlide(0)"></span>
+      <span class="shoecase-dot" onclick="setSlide(1)"></span>
+      <span class="shoecase-dot" onclick="setSlide(2)"></span>
+    </div>
+  </section>
+
+  <!-- PACKED FOR WHOLESALE -->
+  <section class="packing" id="packing">
+    <div class="packing-inner">
+      <div class="eyebrow">How We Sell</div>
+      <h2>Packed for Wholesale</h2>
+      <div class="packing-grid">
+        <div class="packing-card">
+          <div class="qty">1 Dozen</div>
+          <div class="desc">1 colour / model per carton — standard B2B wholesale unit</div>
+        </div>
+        <div class="packing-card">
+          <div class="qty">2 Dozen</div>
+          <div class="desc">Mixed colours and sizes in one carton — ready to shelve in retail stores</div>
+        </div>
+        <div class="packing-card">
+          <div class="qty">Container / Bulk</div>
+          <div class="desc">Palletized or FCL export shipments for distributors across the Gulf</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT & TRADE HUBS -->
+  <section class="contact" id="contact">
+    <div class="eyebrow">Find Us</div>
+    <h2>Get In Touch</h2>
+    <div class="locations">
+      <div class="location-card">
+        <div class="name">UAE Trade Desk</div>
+        <div class="addr">Dubai, Abu Dhabi & Sharjah<br>Wholesale Inquiries</div>
+      </div>
+      <div class="location-card">
+        <div class="name">Saudi Arabia Desk</div>
+        <div class="addr">Riyadh & Jeddah<br>Bulk Sourcing & Private Label</div>
+      </div>
+      <div class="location-card">
+        <div class="name">India Manufacturing</div>
+        <div class="addr">Export Production Facility<br>Country of Origin: India</div>
+      </div>
+    </div>
+
+    <div class="contact-cta">
+      <p class="contact-cta-msg">For wholesale orders, carton pricing, and custom branding discussions:</p>
+      <a href="https://wa.me/919443750820" target="_blank" rel="noopener noreferrer" class="contact-number">
+        +91 9443750820
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <img src="public/logo.svg" alt="Classic Edge Atelier" class="footer-logo">
+    <div class="footer-nav">
+      <a href="#about">About</a>
+      <a href="#catalog">Catalog</a>
+      <a href="#packing">Packing</a>
+      <a href="#contact">Contact</a>
+      <a href="javascript:void(0)" onclick="downloadCatalogue('Full-Wholesale-Catalog')">Download Catalogue</a>
+      <a href="https://wa.me/919443750820" target="_blank" rel="noopener noreferrer">WhatsApp Desk</a>
+      <a href="mailto:classicedgeatlier@gmail.com">Direct Email</a>
+    </div>
+    <div class="footer-contact-bar" style="display:flex; justify-content:center; align-items:center; gap:16px; margin:16px auto; flex-wrap:wrap;">
+      <a href="mailto:classicedgeatlier@gmail.com" class="contact-chip contact-chip-email" style="display:inline-flex; align-items:center; gap:8px; font-size:15px; font-weight:600; color:#fff; text-decoration:none; padding:8px 14px; border:1px solid #ea4335; border-radius:4px;">
+        <svg style="width:20px; height:20px; vertical-align:middle;" viewBox="0 0 48 48">
+          <path fill="#4caf50" d="M45,16.2l-5,2.75l-5,4.75L35,40h7c1.657,0,3-1.343,3-3V16.2z"></path>
+          <path fill="#1e88e5" d="M3,16.2l3.614,1.71L13,23.7V40H6c-1.657,0-3-1.343-3-3V16.2z"></path>
+          <polygon fill="#e53935" points="35,11.2 24,19.45 13,11.2 12,17 13,23.7 24,31.95 35,23.7 36,17"></polygon>
+          <path fill="#c62828" d="M3,12.298V16.2l10,7.5V11.2L9.876,8.859C8.132,7.553,5.637,8.083,4.516,9.986L3,12.298z"></path>
+          <path fill="#fbc02d" d="M45,12.298V16.2l-10,7.5V11.2l3.124-2.341c1.744-1.306,4.239-0.776,5.36,1.127L45,12.298z"></path>
+        </svg>
+        <span>classicedgeatlier@gmail.com</span>
+      </a>
+      <a href="https://wa.me/919443750820" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; font-size:15px; font-weight:600; color:#fff; text-decoration:none; padding:8px 14px; border:1px solid #25D366; border-radius:4px;">
+        <span>WhatsApp: +91 9443750820</span>
+      </a>
+    </div>
+    <div class="footer-contact">
+      <span>Country of Origin: India</span>
+      <span class="footer-dot">·</span>
+      <span>Target Markets: UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman</span>
+    </div>
+    <div>&copy; 2026 Classic Edge Atelier. Leather Footwear • Bags • Accessories. All rights reserved.</div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/919443750820" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" title="Chat with Export Desk on WhatsApp">
+    💬
+  </a>
+
+  <!-- ----------------------------------------------------
+       INTERACTIVE PRODUCT DUMMY GRID OVERLAY (WHEN CLICKING CATEGORY)
+  ---------------------------------------------------- -->
+  <div class="product-grid-modal" id="productGridModal">
+    <div class="modal-container">
+      <div class="modal-top-bar">
+        <div>
+          <div class="modal-category-title" id="gridCategoryTitle">Leather Shoes Collection</div>
+          <div class="modal-category-sub">Classic Edge Atelier · Sample Line Sheet Options</div>
+        </div>
+        <div class="modal-actions-header">
+          <button type="button" class="btn-download-pdf" onclick="downloadCatalogue(currentCategorySelected)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download Category Catalogue (PDF)
+          </button>
+          <button type="button" class="btn-modal-close" onclick="closeProductGrid()" title="Close">&times;</button>
+        </div>
+      </div>
+
+      <!-- Dummy Options Cards -->
+      <div class="dummy-grid-container" id="dummyGridContainer">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- STANDARD QUOTE / ENQUIRY MODAL -->
+  <div class="modal-overlay" id="quoteModal" onclick="closeQuoteModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="modal-head">
+        <h3 id="modalTitle">Wholesale Quotation</h3>
+        <button type="button" class="modal-close" onclick="closeQuoteModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Connect directly with our export desk on WhatsApp or Email for instant carton pricing, specs, and private label feasibility.</p>
+        <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-dark); padding: 12px; border-radius: 4px; margin-bottom: 16px; font-weight: 700; color: var(--gold-light);" id="modalSelectedProduct">
+          Product / Category: Wholesale Supply
+        </div>
+        <div class="modal-actions">
+          <a id="modalWaBtn" href="https://wa.me/919443750820" target="_blank" rel="noopener noreferrer" class="cta-whatsapp" style="flex:1; text-align:center;">
+            Open WhatsApp (+91 9443750820)
+          </a>
+          <a id="modalMailBtn" href="mailto:classicedgeatlier@gmail.com" class="cta" style="flex:1; text-align:center;">
+            Send Direct Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Shelf Slider Logic
+    let currentSlide = 0;
+    const slides = [document.getElementById('slide0'), document.getElementById('slide1'), document.getElementById('slide2')];
+    const dots = document.querySelectorAll('.shoecase-dot');
+
+    function setSlide(index) {
+      currentSlide = index;
+      slides.forEach((s, i) => { if (s) s.classList.toggle('active', i === index); });
+      dots.forEach((d, i) => { if (d) d.classList.toggle('active', i === index); });
+    }
+
+    setInterval(() => {
+      setSlide((currentSlide + 1) % slides.length);
+    }, 4500);
+
+    // Promo Card Deck Logic
+    let cardDeckIndex = 0;
+    const cardsData = [
+      { img: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=700&q=80', badge: 'Offer', title: 'Bespoke Brogue 116' },
+      { img: 'https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=700&q=80', badge: 'Fast Selling', title: 'Arabian Slide 04' },
+      { img: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80', badge: 'New Arrival', title: 'Executive Messenger Bag' },
+      { img: 'https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=700&q=80', badge: 'Offer', title: 'Cognac Bifold Wallet' }
+    ];
+
+    function dismissTopCard() {
+      cardDeckIndex = (cardDeckIndex + 1) % cardsData.length;
+      const c0 = document.getElementById('card0');
+      const c1 = document.getElementById('card1');
+      const c2 = document.getElementById('card2');
+
+      const d0 = cardsData[cardDeckIndex % cardsData.length];
+      const d1 = cardsData[(cardDeckIndex + 1) % cardsData.length];
+      const d2 = cardsData[(cardDeckIndex + 2) % cardsData.length];
+
+      c0.innerHTML = `<img src="${d0.img}" alt="${d0.title}"><span class="promo-badge">${d0.badge}</span><span class="promo-name">${d0.title}</span>`;
+      c1.innerHTML = `<img src="${d1.img}" alt="${d1.title}"><span class="promo-badge">${d1.badge}</span><span class="promo-name">${d1.title}</span>`;
+      c2.innerHTML = `<img src="${d2.img}" alt="${d2.title}"><span class="promo-badge">${d2.badge}</span><span class="promo-name">${d2.title}</span>`;
+    }
+
+    // -------------------------------------------------------------------
+    // DUMMY GRID PRODUCT OPTIONS DATA
+    // -------------------------------------------------------------------
+    const CATEGORY_DUMMY_OPTIONS = {
+      'Leather Shoes': [
+        { sku: 'CEA-LS-101', name: 'Cap-Toe Oxford Brogue', spec: 'Full-Grain Calf Leather, Goodyear Welted, Hand-burnished cognac finish.', pack: '12 Pairs / Carton · Sizes 40-45 EU', img: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=600&q=80' },
+        { sku: 'CEA-LS-102', name: 'Artisan Penny Loafer', spec: 'Supple Box Calf, cushioned leather insole, stitched welt construction.', pack: '12 Pairs / Carton · Single or Mixed Colours', img: 'https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=600&q=80' },
+        { sku: 'CEA-LS-103', name: 'Double Monk Strap Dress Shoe', spec: 'Burnished Espresso leather, solid brass double buckle, channelled leather sole.', pack: '12 Pairs / Carton · Export Packaged', img: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80' },
+        { sku: 'CEA-LS-104', name: 'Classic Derby Shoe', spec: 'Open-laced profile, water-resistant treated welt, high-durability heel.', pack: '24 Pairs / Carton · Assorted Runs', img: 'https://images.unsplash.com/photo-1582897027663-8d6e3260be5a?auto=format&fit=crop&w=600&q=80' },
+        { sku: 'CEA-LS-105', name: 'Casual Driving Moccasin', spec: 'Ultra-soft pebble grain leather, pebbled rubber grip sole, unlined breathability.', pack: '12 Pairs / Carton · Available in 4 Shades', img: 'https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=600&q=80' },
+        { sku: 'CEA-LS-106', name: 'Executive Chelsea Boot', spec: 'Elastic side gusset, rear pull tab, premium vegetable-tanned leather lining.', pack: '12 Pairs / Carton · B2B Export Grade', img: 'https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=600&q=80' }
+      ],
+      'Arabic Slippers': [
+        { sku: 'CEA-AS-201', name: 'Traditional Gulf Leather Slide', spec: 'Ergonomic wide-band upper, genuine leather insole, non-slip treaded base.', pack: '24 Pairs / Carton · Mixed Gulf Sizes', img: 'https://images.unsplash.com/photo-1603808033192-082d6919d3e1?auto=format&fit=crop&w=600&q=80' },
+        { sku: 'CEA-AS-202', name: 'Embossed Toe-Ring Slipper', spec: 'Laser-textured leather upper, arch-support footbed, hand-stitched borders.', pack: '24 Pairs / Carton · Saddle Tan & Dark Brown', img: 'https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=600&q=80' },
+        { sku: 'CEA-AS-203', name: 'Cross-Strap Luxury Slide', spec: 'Full-grain padded double straps, sweat-absorbent lining, flexible sole.', pack: '24 Pairs / Carton · Ready for Retail Display', img: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80' },
+        { sku: 'CEA-AS-204', name: 'Cushioned Comfort Mules', spec: 'High-density memory foam padding under leather, lightweight PU outsole.', pack: '24 Pairs / Carton · Standard GCC Sizes', img: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=600&q=80' }
+      ],
+      'Wallets': [
+        { sku: 'CEA-WL-301', name: 'Classic Bifold Wallet', spec: '8 Card slots, double currency compartment, turned edge finish, RFID blocking layer.', pack: '50 Units / Inner Carton · Gift Box Option', img: 'https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=600&q=80' },
+        { sku: 'CEA-WL-302', name: 'Slim Foldable Card Wallet', spec: 'Front pocket minimalist profile, 6 card slots, central cash fold, debossed branding.', pack: '50 Units / Master Carton', img: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80' },
+        { sku: 'CEA-WL-303', name: 'Zip-Around Passport & Travel Wallet', spec: 'Full zipper closure, boarding pass sleeve, SIM card slot, pen loop.', pack: '25 Units / Carton · Export Pack', img: 'https://images.unsplash.com/photo-1606503825008-909a67e63c23?auto=format&fit=crop&w=600&q=80' },
+        { sku: 'CEA-WL-304', name: 'Money Clip Slim Leather Wallet', spec: 'Solid stainless steel tension clip, 4 card slots, pull-tab access.', pack: '50 Units / Carton · Black, Cognac, Olive', img: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80' }
+      ],
+      'Bags': [
+        { sku: 'CEA-BG-401', name: 'Executive Laptop Briefcase', spec: 'Padded 15.6" laptop compartment, solid brass hardware, detachable leather sling.', pack: '6 Units / Master Carton · Dustbag Included', img: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80' },
+        { sku: 'CEA-BG-402', name: 'Weekend Duffle Travel Holdall', spec: 'Reinforced base with metal studs, dual YKK heavy-duty zips, internal zip pockets.', pack: '4 Units / Master Carton · Export Grade', img: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=600&q=80' },
+        { sku: 'CEA-BG-403', name: 'Minimalist Leather Tote', spec: 'Spacious unstructured interior, key clasp, reinforced bridle leather handles.', pack: '8 Units / Carton · Custom Colors', img: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80' },
+        { sku: 'CEA-BG-404', name: 'Crossbody Messenger Bag', spec: 'Magnetic closure flap, organizer pen/phone slots, adjustable webbing strap.', pack: '10 Units / Carton · B2B Ready', img: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80' }
+      ],
+      'Belts': [
+        { sku: 'CEA-BL-501', name: 'Classic Feather-Edge Dress Belt', spec: 'Full-grain 32mm width, single-prong zinc alloy buckle, polished edge coat.', pack: '36 Units / Carton · Sizes 32-44"', img: 'https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=600&q=80' },
+        { sku: 'CEA-BL-502', name: 'Casual Jean Leather Belt', spec: 'Heavy 38mm thickness, antique brass buckle, contrast border saddle stitch.', pack: '36 Units / Carton · Dark Brown & Tan', img: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80' },
+        { sku: 'CEA-BL-503', name: 'Reversible Dual-Tone Formal Belt', spec: 'Twist buckle mechanism (Black to Mahogany Tan), rounded tip profile.', pack: '24 Units / Display Box', img: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80' }
+      ],
+      'Textiles & Garments': [
+        { sku: 'CEA-TX-601', name: 'Export Cotton Suiting & Shirting', spec: 'High-count combed cotton, mercerized finish, consistent roll dye batches.', pack: 'Rolls or Carton Folded · MOQ on discussion', img: 'https://images.unsplash.com/photo-1584589167171-541ce45f1eea?auto=format&fit=crop&w=600&q=80' },
+        { sku: 'CEA-TX-602', name: 'Tailored Apparel Manufacturing', spec: 'Custom pattern cutting, label stitching, packaging in export boxes.', pack: 'Bulk Carton Pack · Tech Pack Based', img: 'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=600&q=80' },
+        { sku: 'CEA-TX-603', name: 'Woven Linen & Blend Fabrics', spec: 'Natural breathable linen-cotton weave, pre-shrunk, ideal for warm climates.', pack: 'Standard Bulk Rolls · GCC Spec', img: 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=600&q=80' }
+      ]
+    };
+
+    let currentCategorySelected = 'Leather Shoes';
+
+    function openProductGrid(categoryName) {
+      currentCategorySelected = categoryName;
+      const modal = document.getElementById('productGridModal');
+      const title = document.getElementById('gridCategoryTitle');
+      const container = document.getElementById('dummyGridContainer');
+
+      title.textContent = categoryName + ' Collection';
+
+      const items = CATEGORY_DUMMY_OPTIONS[categoryName] || CATEGORY_DUMMY_OPTIONS['Leather Shoes'];
+
+      let html = '';
+      items.forEach(item => {
+        html += `
+          <div class="dummy-card">
+            <img src="${item.img}" alt="${item.name}" class="dummy-card-image" loading="lazy">
+            <div class="dummy-card-body">
+              <div class="dummy-card-sku">${item.sku}</div>
+              <div class="dummy-card-title">${item.name}</div>
+              <div class="dummy-card-spec">${item.spec}</div>
+              <div class="dummy-card-meta">
+                <strong>Pack:</strong> ${item.pack}<br>
+                <strong>MOQ:</strong> Available on enquiry
+              </div>
+              <button type="button" class="dummy-card-btn" onclick="openQuoteModal('${item.name} (${item.sku})')">
+                Enquire Quotation &rarr;
+              </button>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProductGrid() {
+      document.getElementById('productGridModal').classList.remove('open');
+      document.body.style.overflow = 'auto';
+    }
+
+    // -------------------------------------------------------------------
+    // CATALOGUE DOWNLOAD ENGINE (GENERATES REAL PDF DOWNLOAD)
+    // -------------------------------------------------------------------
+    function downloadCatalogue(categoryName) {
+      const filename = `Classic_Edge_Atelier_${(categoryName || 'Catalogue').replace(/\s+/g, '_')}_2026.pdf`;
+      
+      // Printable HTML representation formatted as an official B2B line sheet
+      const content = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="utf-8">
+          <title>Classic Edge Atelier — B2B Wholesale Catalogue</title>
+          <style>
+            body { font-family: -apple-system, sans-serif; padding: 40px; color: #111; max-width: 800px; margin: 0 auto; line-height: 1.6; }
+            .header { text-align: center; border-bottom: 2px solid #C5A059; padding-bottom: 20px; margin-bottom: 30px; }
+            .title { font-size: 26px; font-weight: 800; letter-spacing: 3px; color: #000; text-transform: uppercase; margin: 0; }
+            .sub { font-size: 13px; color: #666; letter-spacing: 2px; text-transform: uppercase; margin-top: 6px; }
+            .meta { background: #f7f5f0; border: 1px solid #e2ddd2; padding: 16px; border-radius: 4px; margin-bottom: 30px; font-size: 13px; }
+            .table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 12px; }
+            .table th, .table td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+            .table th { background: #1a1a1f; color: #C5A059; text-transform: uppercase; letter-spacing: 1px; }
+            .contact-box { margin-top: 40px; border-top: 1px solid #ccc; padding-top: 20px; text-align: center; font-size: 12px; color: #555; }
+          </style>
+        </head>
+        <body>
+          <div class="header">
+            <h1 class="title">CLASSIC EDGE ATELIER</h1>
+            <div class="sub">Leather Footwear • Bags • Accessories • Export Catalogue 2026</div>
+          </div>
+          <div class="meta">
+            <strong>Target Markets:</strong> UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman<br>
+            <strong>Country of Origin:</strong> India<br>
+            <strong>Category Selected:</strong> ${categoryName || 'Complete Wholesale Collection'}<br>
+            <strong>WhatsApp Export Desk:</strong> +91 9443750820 | <strong>Email:</strong> classicedgeatlier@gmail.com
+          </div>
+          <h3>Wholesale Sample Options & Carton Breakdowns</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Item Code</th>
+                <th>Product Description</th>
+                <th>Standard Carton Packaging</th>
+                <th>Wholesale Terms</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>CEA-101</td><td>Handcrafted Oxford & Brogue Formal Shoes</td><td>12 Pairs / Single Colour Carton</td><td>FOB/CIF on enquiry</td></tr>
+              <tr><td>CEA-102</td><td>Artisan Box Calf Penny Loafer</td><td>12 Pairs / Mixed Sizes (40-45 EU)</td><td>FOB/CIF on enquiry</td></tr>
+              <tr><td>CEA-201</td><td>Gulf Heritage Leather Slippers & Slides</td><td>24 Pairs / Carton</td><td>FOB/CIF on enquiry</td></tr>
+              <tr><td>CEA-301</td><td>Full-Grain Bifold & Foldable Wallets</td><td>50 Units / Master Carton</td><td>FOB/CIF on enquiry</td></tr>
+              <tr><td>CEA-401</td><td>Executive Briefcases & Holdalls</td><td>6-8 Units / Master Carton</td><td>FOB/CIF on enquiry</td></tr>
+              <tr><td>CEA-501</td><td>Classic Dress Belts (Solid Brass Buckles)</td><td>36 Units / Carton</td><td>FOB/CIF on enquiry</td></tr>
+            </tbody>
+          </table>
+          <div class="contact-box">
+            For current container pricing, custom logo embossing, and delivery schedules:<br>
+            <strong>WhatsApp: +91 9443750820 &bull; Email: classicedgeatlier@gmail.com</strong>
+          </div>
+        </body>
+        </html>
+      `;
+
+      // Trigger instant HTML/PDF view or file save
+      const blob = new Blob([content], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename.replace('.pdf', '.html'); // Downloads printable line-sheet immediately
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      // Also open print window if requested
+      const printWindow = window.open('', '_blank');
+      if (printWindow) {
+        printWindow.document.write(content);
+        printWindow.document.close();
+        setTimeout(() => { printWindow.print(); }, 400);
+      }
+    }
+
+    // Modal
+    function openQuoteModal(prod) {
+      const modal = document.getElementById('quoteModal');
+      const prodLabel = document.getElementById('modalSelectedProduct');
+      const waBtn = document.getElementById('modalWaBtn');
+      const mailBtn = document.getElementById('modalMailBtn');
+
+      prodLabel.textContent = 'Selected: ' + prod;
+      const msg = encodeURIComponent('Hello Classic Edge Atelier, I would like to request wholesale quotation and catalog for: ' + prod);
+      waBtn.href = 'https://wa.me/919443750820?text=' + msg;
+      mailBtn.href = 'mailto:classicedgeatlier@gmail.com?subject=' + encodeURIComponent('Classic Edge Atelier Wholesale Inquiry: ' + prod);
+
+      modal.classList.add('open');
+    }
+
+    function closeQuoteModal() {
+      document.getElementById('quoteModal').classList.remove('open');
+    }
+
+    // Language switcher simulation
+    function changeLanguage(lang) {
+      if (lang === 'ar') {
+        document.documentElement.setAttribute('dir', 'rtl');
+        document.getElementById('heroTitle').innerHTML = 'كلاسيك إيدج أتيليه — <span>الأحذية والجلديات</span> من الهند';
+        document.getElementById('heroSub').textContent = 'أحذية جلدية رسمية، نعال خليجية، محافظ، حقائب وأحزمة — توريد مباشر بالجملة ومصنعية متقونة لدول الخليج.';
+      } else if (lang === 'ur') {
+        document.documentElement.setAttribute('dir', 'rtl');
+        document.getElementById('heroTitle').innerHTML = 'کلاسک ایج اٹیلیئر — <span>چمڑے اور جوتوں</span> کا بین الاقوامی سپلائر';
+        document.getElementById('heroSub').textContent = 'ہندوستان سے ہول سیل سپلائی، فیکٹری ریٹ اور براہ راست واٹس ایپ سروس۔';
+      } else {
+        document.documentElement.setAttribute('dir', 'ltr');
+        document.getElementById('heroTitle').innerHTML = "Your Shop's <span>Footwear & Leather</span> Partner from India";
+        document.getElementById('heroSub').textContent = "Handcrafted formal shoes, everyday slippers, wallets, bags, and belts. Direct manufacturer pricing, reliable bulk production, and an export desk that answers promptly on WhatsApp.";
+      }
+    }
+  </script>
+</body>
+</html>
