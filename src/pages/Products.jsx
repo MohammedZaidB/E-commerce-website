@@ -141,7 +141,7 @@ export default function Products({ onOpenQuoteModal }) {
         <div class="meta">
           <strong>Target Markets:</strong> UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman<br>
           <strong>Country of Origin:</strong> India<br>
-          <strong>WhatsApp Export Desk:</strong> +91 9443750820 | <strong>Email:</strong> classicedgeatlier@gmail.com
+          <strong>WhatsApp Export Desk:</strong> +91 9443750820 | <strong>Email:</strong> classicedgeatelier@gmail.com
         </div>
         <h3>Export Carton Specifications & Packaging</h3>
         <table class="table">
@@ -157,7 +157,7 @@ export default function Products({ onOpenQuoteModal }) {
           </tbody>
         </table>
         <div class="contact-box">
-          WhatsApp: +91 9443750820 • Email: classicedgeatlier@gmail.com
+          WhatsApp: +91 9443750820 • Email: classicedgeatelier@gmail.com
         </div>
       </body>
       </html>

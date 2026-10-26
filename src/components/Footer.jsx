@@ -125,7 +125,7 @@ export default function Footer() {
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
-              <a href="classicedgeatlier@gmail.com" style={{ color: '#a6a29a', textDecoration: 'none' }}>classicedgeatlier@gmail.com</a>
+              <a href="mailto:classicedgeatelier@gmail.com" style={{ color: '#a6a29a', textDecoration: 'none' }}>classicedgeatelier@gmail.com</a>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginTop: '3px' }}>

@@ -27,7 +27,7 @@ namespace ClassicEdge.Api.Services
                 order.OrderId, order.TransactionId, order.Customer.Email, order.Payment.Amount);
 
             var recipient = string.IsNullOrWhiteSpace(order.Customer.Email) 
-                ? "classicedgeatlier@gmail.com" 
+                ? "classicedgeatelier@gmail.com" 
                 : order.Customer.Email;
 
             var emailSubject = $"Order Confirmation & Tax Invoice - {order.OrderId} | Classic Edge Atelier";
@@ -66,7 +66,7 @@ namespace ClassicEdge.Api.Services
                 $"Warm regards,\n" +
                 $"Classic Edge Atelier Export Operations\n" +
                 $"WhatsApp: +91 9443750820\n" +
-                $"Email: classicedgeatlier@gmail.com\n" +
+                $"Email: classicedgeatelier@gmail.com\n" +
                 $"Origin: India (Exporting to GCC & Worldwide)";
 
             bool mailSent = false;
@@ -74,7 +74,7 @@ namespace ClassicEdge.Api.Services
             {
                 var smtpHost = _config["SmtpSettings:Host"] ?? "smtp.gmail.com";
                 var smtpPort = int.TryParse(_config["SmtpSettings:Port"], out var port) ? port : 587;
-                var senderEmail = _config["SmtpSettings:SenderEmail"] ?? "classicedgeatlier@gmail.com";
+                var senderEmail = _config["SmtpSettings:SenderEmail"] ?? "classicedgeatelier@gmail.com";
                 var senderName = _config["SmtpSettings:SenderName"] ?? "Classic Edge Atelier";
                 var password = _config["SmtpSettings:Password"];
 

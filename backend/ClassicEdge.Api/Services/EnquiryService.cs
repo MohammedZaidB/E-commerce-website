@@ -30,7 +30,7 @@ namespace ClassicEdge.Api.Services
         public Task<EnquiryResult> ProcessEnquiryAsync(EnquiryRequestDto req)
         {
             var refId = $"CE-{DateTime.UtcNow:yyyyMMdd}-{Guid.NewGuid().ToString("N")[..6].ToUpper()}";
-            var recipientEmail = _config["ClassicEdgeSettings:RecipientEmail"] ?? "classicedgeatlier@gmail.com";
+            var recipientEmail = _config["ClassicEdgeSettings:RecipientEmail"] ?? "classicedgeatelier@gmail.com";
             var rawWhatsApp = "919443750820";
 
             _logger.LogInformation("Processing B2B Wholesale Enquiry [{RefId}] from {Company} ({Country}) for Category: {Category}",

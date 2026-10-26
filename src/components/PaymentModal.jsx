@@ -199,7 +199,7 @@ Your handcrafted leather goods are currently being prepared by our master artisa
 
 Classic Edge Atelier Export Desk
 WhatsApp: +91 9443750820
-Email: classicedgeatlier@gmail.com
+Email: classicedgeatelier@gmail.com
 Website: www.classicedge-atelier.com
 `;
 
@@ -302,7 +302,7 @@ Website: www.classicedge-atelier.com
 
         <div class="footer">
           This is a computer-generated tax invoice for Classic Edge Atelier exports.<br>
-          For queries, reach out at classicedgeatlier@gmail.com | WhatsApp: +91 9443750820
+          For queries, reach out at classicedgeatelier@gmail.com | WhatsApp: +91 9443750820
         </div>
       </body>
       </html>

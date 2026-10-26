@@ -82,7 +82,7 @@ export default function Home({ onOpenQuoteModal }) {
         <div class="meta">
           <strong>Target Markets:</strong> UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman<br>
           <strong>Country of Origin:</strong> India<br>
-          <strong>WhatsApp Export Desk:</strong> +91 9443750820 | <strong>Email:</strong> classicedgeatlier@gmail.com
+          <strong>WhatsApp Export Desk:</strong> +91 9443750820 | <strong>Email:</strong> classicedgeatelier@gmail.com
         </div>
         <h3>Export Master Carton Breakdown</h3>
         <table class="table">
@@ -98,7 +98,7 @@ export default function Home({ onOpenQuoteModal }) {
           </tbody>
         </table>
         <div class="contact-box">
-          WhatsApp: +91 9443750820 • Email: classicedgeatlier@gmail.com
+          WhatsApp: +91 9443750820 • Email: classicedgeatelier@gmail.com
         </div>
       </body>
       </html>
@@ -117,79 +117,121 @@ export default function Home({ onOpenQuoteModal }) {
   return (
     <>
       <SEO 
-        title="Leather Bazaar — Premium Leather Shoes, Wallets, Slippers & Accessories"
-        description="Timeless Quality, Made for You. Premium leather shoes, wallets, slippers, and duffle bags crafted with care, built for everyday elegance."
+        title="Premium Leather Products | Wholesale & Private Label | Classic Edge Atelier"
+        description="Classic Edge Atelier is an India-based supplier of leather footwear, slippers, bags, wallets, belts, and bespoke leather goods working with partner manufacturing factories. Dedicated to wholesale and private-label buyers across UAE, Saudi Arabia, Qatar, Kuwait, Oman, Bahrain, and worldwide."
       />
 
-      {/* 1. HERO SECTION MATCHING MOCKUP */}
+      {/* 1. HERO SECTION WITH REQUESTED HEADLINE AND PROMINENT BUTTONS */}
       <section className="home-hero-section">
-        <div style={{ maxWidth: '1240px', margin: '0 auto', width: '100%', position: 'relative' }}>
+        <div style={{ maxWidth: '1240px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 }}>
           {/* Left Text Content */}
-          <div style={{ maxWidth: '540px' }}>
+          <div style={{ maxWidth: '640px' }}>
             <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              background: 'rgba(212, 163, 64, 0.12)',
+              border: '1px solid rgba(212, 163, 64, 0.35)',
+              padding: '6px 14px',
+              borderRadius: '20px',
               fontSize: '11px',
-              letterSpacing: '2.5px',
+              letterSpacing: '1.8px',
               textTransform: 'uppercase',
-              color: '#d4af37',
+              color: '#f5e2b8',
               fontWeight: 700,
-              marginBottom: '12px'
+              marginBottom: '16px'
             }}>
-              PREMIUM LEATHER PRODUCTS
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#d4a340' }}></span>
+              <span>B2B Leather Export Supplier • India</span>
             </div>
 
-            <h1 className="home-hero-title">
-              Timeless Quality,<br />Made for You
+            <h1 className="home-hero-title" style={{ fontSize: 'clamp(28px, 4.8vw, 48px)', lineHeight: 1.15, fontWeight: 800 }}>
+              Premium Leather Products | Wholesale &amp; Private Label
             </h1>
 
             <p style={{
               fontSize: '15px',
-              color: '#b8b4ab',
-              lineHeight: 1.6,
+              color: '#d4d0c7',
+              lineHeight: 1.65,
               margin: '0 0 32px',
-              maxWidth: '480px'
+              maxWidth: '560px'
             }}>
-              Classic Edge Atelier brings you premium leather shoes, wallets, slippers and more &mdash; crafted with care, built for everyday elegance.
+              Classic Edge Atelier supplies handcrafted leather footwear, artisanal slippers, executive bags, wallets, belts, and bespoke leather goods working with partner manufacturing factories in India. Serving international importers, wholesalers, retail distributors, and private-label brands across the UAE, Saudi Arabia, Qatar, Kuwait, Oman, and Bahrain.
             </p>
 
-            <div>
+            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center' }}>
               <Link 
                 to="/products" 
+                className="btn-primary"
                 style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  background: '#8C4E26',
-                  color: '#ffffff',
-                  padding: '13px 30px',
-                  borderRadius: '3px',
-                  fontSize: '12.5px',
-                  fontWeight: 700,
-                  letterSpacing: '1px',
-                  textTransform: 'uppercase',
-                  textDecoration: 'none',
-                  boxShadow: '0 4px 14px rgba(140, 78, 38, 0.4)',
-                  transition: 'background 0.2s ease, transform 0.2s ease'
+                  fontSize: '13.5px',
+                  fontWeight: 800,
+                  letterSpacing: '0.5px',
+                  padding: '14px 26px',
+                  textDecoration: 'none'
                 }}
               >
-                <span>SHOP NOW</span>
+                <span>Explore Collection</span>
                 <span>&rarr;</span>
               </Link>
+
+              <button 
+                type="button" 
+                onClick={() => onOpenQuoteModal({ enquiryType: 'Wholesale' })}
+                className="btn-secondary"
+                style={{
+                  fontSize: '13.5px',
+                  fontWeight: 700,
+                  letterSpacing: '0.5px',
+                  padding: '13px 24px',
+                  cursor: 'pointer'
+                }}
+              >
+                <span>Request Wholesale Quote</span>
+              </button>
             </div>
           </div>
 
-          {/* Right Script Tagline: "Real Leather Real Value" */}
+          {/* Right Script Tagline / Monogram Badge */}
           <div className="hero-script-tagline">
             <div style={{
-              fontFamily: "'Great Vibes', cursive",
-              fontSize: '44px',
-              color: '#ffffff',
-              transform: 'rotate(-4deg)',
-              letterSpacing: '1.5px',
-              textShadow: '0 2px 14px rgba(0,0,0,0.8)',
-              lineHeight: 1.1
+              background: 'rgba(20, 20, 24, 0.88)',
+              border: '1px solid rgba(197, 160, 89, 0.35)',
+              borderRadius: '12px',
+              padding: '24px 28px',
+              textAlign: 'center',
+              backdropFilter: 'blur(8px)',
+              maxWidth: '300px'
             }}>
-              Real Leather<br />
-              <span style={{ fontSize: '40px', paddingRight: '12px' }}>Real Value</span>
+              <div style={{
+                fontFamily: 'Cinzel, Georgia, serif',
+                fontSize: '28px',
+                color: '#f5e2b8',
+                fontWeight: 800,
+                letterSpacing: '3px'
+              }}>
+                CEA
+              </div>
+              <div style={{
+                fontSize: '11px',
+                color: '#d4a340',
+                letterSpacing: '1.5px',
+                textTransform: 'uppercase',
+                fontWeight: 700,
+                marginTop: '4px'
+              }}>
+                Classic Edge Atelier
+              </div>
+              <div style={{
+                fontSize: '11.5px',
+                color: '#9e9a91',
+                lineHeight: 1.5,
+                marginTop: '8px',
+                borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+                paddingTop: '8px'
+              }}>
+                Supplying Importers across UAE, KSA, Qatar, Kuwait, Oman &amp; Bahrain
+              </div>
             </div>
           </div>
         </div>
@@ -198,16 +240,25 @@ export default function Home({ onOpenQuoteModal }) {
       {/* 2. "SHOP BY CATEGORY" SECTION */}
       <section style={{ backgroundColor: '#FAF7F2', padding: '50px 20px' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <h2 style={{
-            fontFamily: "'Playfair Display', Georgia, serif",
-            fontSize: '32px',
-            fontWeight: 700,
-            color: '#1a1a1a',
-            margin: '0 0 28px',
-            textAlign: 'left'
-          }}>
-            Shop by Category
-          </h2>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '28px', flexWrap: 'wrap', gap: '12px' }}>
+            <div>
+              <div style={{ fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '1.8px', color: '#c5a059', fontWeight: 700, marginBottom: '6px' }}>
+                Artisanal Product Range
+              </div>
+              <h2 style={{
+                fontFamily: "'Playfair Display', Georgia, serif",
+                fontSize: '32px',
+                fontWeight: 700,
+                color: '#1a1a1a',
+                margin: 0
+              }}>
+                Shop by Category
+              </h2>
+            </div>
+            <Link to="/products" style={{ fontSize: '13px', fontWeight: 700, color: '#1a1a1a', textDecoration: 'none' }}>
+              View All Products &rarr;
+            </Link>
+          </div>
 
           <div className="category-grid-responsive">
             {/* Category 1: Shoes */}
@@ -222,16 +273,16 @@ export default function Home({ onOpenQuoteModal }) {
             }}>
               <img 
                 src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=600&q=80" 
-                alt="Shoes" 
+                alt="Ladies' and Men's Leather Shoes" 
                 style={{ width: '100%', height: '185px', objectFit: 'cover', display: 'block' }}
               />
               <div style={{ padding: '16px 14px 20px' }}>
-                <div style={{ fontSize: '15px', fontWeight: 700, color: '#1a1a1a', marginBottom: '6px' }}>Shoes</div>
+                <div style={{ fontSize: '15px', fontWeight: 700, color: '#1a1a1a', marginBottom: '6px' }}>Footwear &amp; Shoes</div>
                 <Link 
                   to="/products?category=shoes" 
-                  style={{ fontSize: '12px', color: '#555', textDecoration: 'none', fontWeight: 600 }}
+                  style={{ fontSize: '12px', color: '#8c4e26', textDecoration: 'none', fontWeight: 700 }}
                 >
-                  Shop Now &rarr;
+                  Explore Footwear &rarr;
                 </Link>
               </div>
             </div>
@@ -248,16 +299,16 @@ export default function Home({ onOpenQuoteModal }) {
             }}>
               <img 
                 src="https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=600&q=80" 
-                alt="Wallets" 
+                alt="Leather Wallets & Cardholders" 
                 style={{ width: '100%', height: '185px', objectFit: 'cover', display: 'block' }}
               />
               <div style={{ padding: '16px 14px 20px' }}>
-                <div style={{ fontSize: '15px', fontWeight: 700, color: '#1a1a1a', marginBottom: '6px' }}>Wallets</div>
+                <div style={{ fontSize: '15px', fontWeight: 700, color: '#1a1a1a', marginBottom: '6px' }}>Leather Wallets</div>
                 <Link 
                   to="/products?category=wallets" 
-                  style={{ fontSize: '12px', color: '#555', textDecoration: 'none', fontWeight: 600 }}
+                  style={{ fontSize: '12px', color: '#8c4e26', textDecoration: 'none', fontWeight: 700 }}
                 >
-                  Shop Now &rarr;
+                  Explore Wallets &rarr;
                 </Link>
               </div>
             </div>
@@ -274,16 +325,16 @@ export default function Home({ onOpenQuoteModal }) {
             }}>
               <img 
                 src="https://images.unsplash.com/photo-1603808033192-082d6919d3e1?auto=format&fit=crop&w=600&q=80" 
-                alt="Slippers" 
+                alt="Leather Slippers & Arabic Slides" 
                 style={{ width: '100%', height: '185px', objectFit: 'cover', display: 'block' }}
               />
               <div style={{ padding: '16px 14px 20px' }}>
-                <div style={{ fontSize: '15px', fontWeight: 700, color: '#1a1a1a', marginBottom: '6px' }}>Slippers</div>
+                <div style={{ fontSize: '15px', fontWeight: 700, color: '#1a1a1a', marginBottom: '6px' }}>Leather Slippers</div>
                 <Link 
                   to="/products?category=slippers" 
-                  style={{ fontSize: '12px', color: '#555', textDecoration: 'none', fontWeight: 600 }}
+                  style={{ fontSize: '12px', color: '#8c4e26', textDecoration: 'none', fontWeight: 700 }}
                 >
-                  Shop Now &rarr;
+                  Explore Slippers &rarr;
                 </Link>
               </div>
             </div>
@@ -300,16 +351,16 @@ export default function Home({ onOpenQuoteModal }) {
             }}>
               <img 
                 src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80" 
-                alt="Other Leather Products" 
+                alt="Bags, Belts & Leather Accessories" 
                 style={{ width: '100%', height: '185px', objectFit: 'cover', display: 'block' }}
               />
               <div style={{ padding: '16px 14px 20px' }}>
-                <div style={{ fontSize: '15px', fontWeight: 700, color: '#1a1a1a', marginBottom: '6px' }}>Other Leather Products</div>
+                <div style={{ fontSize: '15px', fontWeight: 700, color: '#1a1a1a', marginBottom: '6px' }}>Bags, Belts &amp; Goods</div>
                 <Link 
                   to="/products?category=bags" 
-                  style={{ fontSize: '12px', color: '#555', textDecoration: 'none', fontWeight: 600 }}
+                  style={{ fontSize: '12px', color: '#8c4e26', textDecoration: 'none', fontWeight: 700 }}
                 >
-                  Shop Now &rarr;
+                  Explore Accessories &rarr;
                 </Link>
               </div>
             </div>
@@ -317,141 +368,255 @@ export default function Home({ onOpenQuoteModal }) {
         </div>
       </section>
 
-      {/* 3. "CRAFTED WITH PASSION, DESIGNED FOR YOU" SPLIT SECTION */}
-      <section style={{ backgroundColor: '#FAF7F2', padding: '10px 20px 60px' }}>
-        <div className="split-feature-container">
-          {/* Column 1: Macro Photo of Natural Leather Grain Hides */}
-          <div style={{ height: '100%' }}>
-            <img 
-              src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=85" 
-              alt="Natural Grain Leather Hides" 
-              style={{ width: '100%', height: '100%', minHeight: '380px', objectFit: 'cover', display: 'block' }}
-            />
-          </div>
-
-          {/* Column 2: Dark Box with Statement Text */}
+      {/* 3. DEDICATED WHOLESALE & PRIVATE-LABEL SECTION */}
+      <section style={{ backgroundColor: '#ffffff', padding: '70px 20px', borderTop: '1px solid #ebe7df', borderBottom: '1px solid #ebe7df' }}>
+        <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{
-            background: '#141416',
+            background: 'linear-gradient(135deg, #141417 0%, #1c1c22 100%)',
+            border: '1.5px solid rgba(197, 160, 89, 0.35)',
+            borderRadius: '16px',
             padding: '48px 36px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            color: '#ffffff'
+            color: '#ffffff',
+            boxShadow: '0 12px 36px rgba(0, 0, 0, 0.12)'
           }}>
-            <div style={{
-              fontSize: '10px',
-              letterSpacing: '2px',
-              textTransform: 'uppercase',
-              color: '#a1a1aa',
-              fontWeight: 700,
-              marginBottom: '10px'
-            }}>
-              ABOUT CLASSIC EDGE ATELIER
+            <div style={{ maxWidth: '900px' }}>
+              <span style={{
+                display: 'inline-block',
+                background: 'rgba(212, 163, 64, 0.15)',
+                border: '1px solid rgba(212, 163, 64, 0.35)',
+                padding: '4px 12px',
+                borderRadius: '4px',
+                fontSize: '11px',
+                color: '#f5e2b8',
+                fontWeight: 700,
+                letterSpacing: '1.5px',
+                textTransform: 'uppercase',
+                marginBottom: '14px'
+              }}>
+                B2B Sourcing &amp; Contract Manufacturing
+              </span>
+
+              <h2 style={{
+                fontFamily: 'Cinzel, Georgia, serif',
+                fontSize: 'clamp(24px, 4vw, 36px)',
+                fontWeight: 800,
+                color: '#ffffff',
+                margin: '0 0 16px',
+                lineHeight: 1.2
+              }}>
+                Wholesale &amp; Private-Label Manufacturing
+              </h2>
+
+              <p style={{
+                fontSize: '14.5px',
+                color: '#d4d0c7',
+                lineHeight: 1.7,
+                margin: '0 0 28px'
+              }}>
+                Classic Edge Atelier serves international commercial buyers as a specialized leather goods supplier working with partner manufacturing factories in India. We coordinate production schedules, material sourcing, and private-label requirements—enabling importers and retail brands in the GCC and worldwide to source tailored leather collections with complete confidence.
+              </p>
+
+              {/* 3 Key Pillars of Wholesale & Private Label */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px', marginBottom: '32px' }}>
+                <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '8px', padding: '20px' }}>
+                  <div style={{ fontSize: '15px', fontWeight: 700, color: '#f5e2b8', marginBottom: '6px' }}>
+                    1. Bulk Order Supply
+                  </div>
+                  <p style={{ fontSize: '12.5px', color: '#b8b4ab', margin: 0, lineHeight: 1.5 }}>
+                    Supplying structured wholesale quantities for department stores, retail chains, and trade distribution networks with export master carton packaging.
+                  </p>
+                </div>
+
+                <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '8px', padding: '20px' }}>
+                  <div style={{ fontSize: '15px', fontWeight: 700, color: '#f5e2b8', marginBottom: '6px' }}>
+                    2. Custom Branding Options
+                  </div>
+                  <p style={{ fontSize: '12.5px', color: '#b8b4ab', margin: 0, lineHeight: 1.5 }}>
+                    Logo debossing, sole stamping, custom insole branding, metal hardware finishing, and custom packaging tailored to your brand identity.
+                  </p>
+                </div>
+
+                <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '8px', padding: '20px' }}>
+                  <div style={{ fontSize: '15px', fontWeight: 700, color: '#f5e2b8', marginBottom: '6px' }}>
+                    3. Partner Factory Coordination
+                  </div>
+                  <p style={{ fontSize: '12.5px', color: '#b8b4ab', margin: 0, lineHeight: 1.5 }}>
+                    We oversee sample feasibility, production milestones, and pre-shipment quality standards with vetted Indian manufacturing workshops.
+                  </p>
+                </div>
+              </div>
+
+              {/* Action buttons */}
+              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+                <button 
+                  type="button" 
+                  onClick={() => onOpenQuoteModal({ enquiryType: 'Wholesale' })}
+                  className="btn-primary"
+                  style={{ textDecoration: 'none', cursor: 'pointer' }}
+                >
+                  <span>Request Wholesale Quotation</span>
+                </button>
+
+                <Link 
+                  to="/private-label" 
+                  className="btn-secondary"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <span>Explore Private Label Process &rarr;</span>
+                </Link>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. "WHY CHOOSE CLASSIC EDGE ATELIER" SECTION */}
+      <section style={{ backgroundColor: '#FAF7F2', padding: '70px 20px' }}>
+        <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 48px' }}>
+            <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '2px', color: '#c5a059', fontWeight: 700, display: 'block', marginBottom: '8px' }}>
+              Built for International Trade
+            </span>
             <h2 style={{
               fontFamily: "'Playfair Display', Georgia, serif",
-              fontSize: '28px',
+              fontSize: 'clamp(26px, 4.5vw, 36px)',
               fontWeight: 700,
-              lineHeight: 1.25,
-              color: '#ffffff',
-              margin: '0 0 16px'
+              color: '#1a1a1a',
+              margin: '0 0 14px'
             }}>
-              Crafted with Passion,<br />Designed for You
+              Why Choose Classic Edge Atelier
             </h2>
-            <p style={{
-              fontSize: '13.5px',
-              color: '#b0aca3',
-              lineHeight: 1.7,
-              margin: '0 0 24px'
-            }}>
-              At Classic Edge Atelier, we manufacture high-quality leather products in Ambur, Tamil Nadu for individuals and businesses worldwide. Whether you're looking for bulk orders, custom branding, or unique designs, we're here to bring your vision to life.
+            <p style={{ fontSize: '14.5px', color: '#666', lineHeight: 1.6, margin: 0 }}>
+              We bridge traditional Indian leather craftsmanship with professional, transparent international trade practices tailored for buyers across the GCC and global markets.
             </p>
-            <div>
-              <Link 
-                to="/about" 
-                style={{
-                  display: 'inline-block',
-                  border: '1px solid rgba(255, 255, 255, 0.4)',
-                  color: '#ffffff',
-                  padding: '9px 24px',
-                  borderRadius: '4px',
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  textDecoration: 'none'
-                }}
-              >
-                Learn More &rarr;
-              </Link>
-            </div>
           </div>
 
-          {/* Column 3: 2x2 Feature Grid on Light Cream Container */}
-          <div className="split-features-subgrid">
-            {/* Feature 1: Premium Quality */}
-            <div style={{ padding: '36px 28px', borderRight: '1px solid #EBE6DC', borderBottom: '1px solid #EBE6DC', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <Award size={26} strokeWidth={1.4} color="#1a1a1a" style={{ marginBottom: '12px' }} />
-              <h4 style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: '15px',
-                fontWeight: 700,
-                color: '#1a1a1a',
-                margin: '0 0 5px'
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))', gap: '24px' }}>
+            {/* Pillar 1: Product Quality */}
+            <div style={{
+              background: '#ffffff',
+              border: '1px solid #ebe7df',
+              borderRadius: '12px',
+              padding: '32px 26px',
+              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.03)',
+              display: 'flex',
+              flexDirection: 'column'
+            }}>
+              <div style={{
+                width: '48px',
+                height: '48px',
+                borderRadius: '8px',
+                background: 'rgba(212, 163, 64, 0.12)',
+                border: '1px solid rgba(212, 163, 64, 0.3)',
+                color: '#8c4e26',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '18px'
               }}>
-                Premium Quality
-              </h4>
-              <p style={{ fontSize: '12px', color: '#666', margin: 0, lineHeight: 1.4 }}>
-                Only the finest leather and materials
+                <Award size={26} strokeWidth={1.8} />
+              </div>
+              <h3 style={{ fontFamily: 'Cinzel, Georgia, serif', fontSize: '17px', color: '#1a1a1a', fontWeight: 700, margin: '0 0 10px' }}>
+                Product Quality &amp; Inspection
+              </h3>
+              <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.6, margin: 0 }}>
+                Every footwear and leather goods style is developed with carefully selected full-grain and top-grain leathers, durable outsoles, and thorough pre-shipment quality checks.
               </p>
             </div>
 
-            {/* Feature 2: Custom Branding */}
-            <div style={{ padding: '36px 28px', borderBottom: '1px solid #EBE6DC', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <PenTool size={26} strokeWidth={1.4} color="#1a1a1a" style={{ marginBottom: '12px' }} />
-              <h4 style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: '15px',
-                fontWeight: 700,
-                color: '#1a1a1a',
-                margin: '0 0 5px'
+            {/* Pillar 2: Responsive Communication */}
+            <div style={{
+              background: '#ffffff',
+              border: '1px solid #ebe7df',
+              borderRadius: '12px',
+              padding: '32px 26px',
+              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.03)',
+              display: 'flex',
+              flexDirection: 'column'
+            }}>
+              <div style={{
+                width: '48px',
+                height: '48px',
+                borderRadius: '8px',
+                background: 'rgba(212, 163, 64, 0.12)',
+                border: '1px solid rgba(212, 163, 64, 0.3)',
+                color: '#8c4e26',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '18px'
               }}>
-                Custom Branding
-              </h4>
-              <p style={{ fontSize: '12px', color: '#666', margin: 0, lineHeight: 1.4 }}>
-                Your logo, your style
+                <PenTool size={24} strokeWidth={1.8} />
+              </div>
+              <h3 style={{ fontFamily: 'Cinzel, Georgia, serif', fontSize: '17px', color: '#1a1a1a', fontWeight: 700, margin: '0 0 10px' }}>
+                Responsive Communication
+              </h3>
+              <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.6, margin: 0 }}>
+                Direct and professional dialogue with our export desk through official email (classicedgeatelier@gmail.com) and WhatsApp (+91 9443750820) for rapid quotation evaluations.
               </p>
             </div>
 
-            {/* Feature 3: Bulk Orders */}
-            <div style={{ padding: '36px 28px', borderRight: '1px solid #EBE6DC', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <Package size={26} strokeWidth={1.4} color="#1a1a1a" style={{ marginBottom: '12px' }} />
-              <h4 style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: '15px',
-                fontWeight: 700,
-                color: '#1a1a1a',
-                margin: '0 0 5px'
+            {/* Pillar 3: Flexible Sourcing */}
+            <div style={{
+              background: '#ffffff',
+              border: '1px solid #ebe7df',
+              borderRadius: '12px',
+              padding: '32px 26px',
+              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.03)',
+              display: 'flex',
+              flexDirection: 'column'
+            }}>
+              <div style={{
+                width: '48px',
+                height: '48px',
+                borderRadius: '8px',
+                background: 'rgba(212, 163, 64, 0.12)',
+                border: '1px solid rgba(212, 163, 64, 0.3)',
+                color: '#8c4e26',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '18px'
               }}>
-                Bulk Orders
-              </h4>
-              <p style={{ fontSize: '12px', color: '#666', margin: 0, lineHeight: 1.4 }}>
-                For businesses & retailers
+                <Package size={24} strokeWidth={1.8} />
+              </div>
+              <h3 style={{ fontFamily: 'Cinzel, Georgia, serif', fontSize: '17px', color: '#1a1a1a', fontWeight: 700, margin: '0 0 10px' }}>
+                Flexible Sourcing &amp; MOQs
+              </h3>
+              <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.6, margin: 0 }}>
+                Scalable production planning with partner factories allows open discussion on minimum order quantities, trial batches, and custom packaging standards.
               </p>
             </div>
 
-            {/* Feature 4: Reliable Delivery */}
-            <div style={{ padding: '36px 28px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <Truck size={26} strokeWidth={1.4} color="#1a1a1a" style={{ marginBottom: '12px' }} />
-              <h4 style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: '15px',
-                fontWeight: 700,
-                color: '#1a1a1a',
-                margin: '0 0 5px'
+            {/* Pillar 4: GCC & International Focus */}
+            <div style={{
+              background: '#ffffff',
+              border: '1px solid #ebe7df',
+              borderRadius: '12px',
+              padding: '32px 26px',
+              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.03)',
+              display: 'flex',
+              flexDirection: 'column'
+            }}>
+              <div style={{
+                width: '48px',
+                height: '48px',
+                borderRadius: '8px',
+                background: 'rgba(212, 163, 64, 0.12)',
+                border: '1px solid rgba(212, 163, 64, 0.3)',
+                color: '#8c4e26',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '18px'
               }}>
-                Reliable Delivery
-              </h4>
-              <p style={{ fontSize: '12px', color: '#666', margin: 0, lineHeight: 1.4 }}>
-                On time, every time
+                <Truck size={24} strokeWidth={1.8} />
+              </div>
+              <h3 style={{ fontFamily: 'Cinzel, Georgia, serif', fontSize: '17px', color: '#1a1a1a', fontWeight: 700, margin: '0 0 10px' }}>
+                Target GCC Market Alignment
+              </h3>
+              <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.6, margin: 0 }}>
+                Familiarity with regional preferences across the UAE, Saudi Arabia, Qatar, Kuwait, Oman, and Bahrain, including traditional slides and formal dress footwear.
               </p>
             </div>
           </div>

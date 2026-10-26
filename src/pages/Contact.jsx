@@ -52,12 +52,38 @@ export default function Contact() {
       `*Message / Specifications:* ${formData.message}`;
   };
 
+  const [copied, setCopied] = useState(false);
+  const [lastSubmission, setLastSubmission] = useState(null);
+
+  const saveEnquiryLocally = (method) => {
+    try {
+      const existing = JSON.parse(localStorage.getItem('classic_edge_enquiries') || '[]');
+      const record = {
+        id: `RFQ-${Date.now().toString().slice(-6)}`,
+        date: new Date().toISOString(),
+        dateDisplay: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }),
+        channel: method,
+        buyer: { ...formData },
+        status: 'New'
+      };
+      existing.unshift(record);
+      localStorage.setItem('classic_edge_enquiries', JSON.stringify(existing));
+      return record;
+    } catch (e) {
+      console.warn('Could not save enquiry locally:', e);
+      return null;
+    }
+  };
+
   const handleWhatsAppSubmit = (e) => {
     e.preventDefault();
     if (!validate()) return;
 
     setActiveMethod('whatsapp');
-    const encoded = encodeURIComponent(generateWhatsAppMessage());
+    const msg = generateWhatsAppMessage();
+    saveEnquiryLocally('WhatsApp');
+    setLastSubmission({ body: msg });
+    const encoded = encodeURIComponent(msg);
     window.open(`https://wa.me/${CONTACT_INFO.whatsappRaw}?text=${encoded}`, '_blank');
     setStatus('success');
   };
@@ -67,8 +93,8 @@ export default function Contact() {
     if (!validate()) return;
 
     setActiveMethod('email');
-    const subject = encodeURIComponent(`B2B Wholesale Enquiry: ${formData.companyName} [${formData.enquiryType}]`);
-    const body = encodeURIComponent(
+    const subject = `B2B Wholesale Enquiry: ${formData.companyName} [${formData.enquiryType}] | Classic Edge Atelier`;
+    const body = 
       `Dear Classic Edge Export Team,\n\n` +
       `We wish to submit the following commercial enquiry for your evaluation:\n\n` +
       `• Full Name: ${formData.fullName}\n` +
@@ -80,18 +106,29 @@ export default function Contact() {
       `• Estimated Order Quantity: ${formData.orderQuantity || 'Open for discussion'}\n` +
       `• Type of Enquiry: ${formData.enquiryType}\n\n` +
       `Requirements & Specifications:\n${formData.message}\n\n` +
-      `Sincerely,\n${formData.fullName}\n${formData.companyName}`
-    );
+      `Sincerely,\n${formData.fullName}\n${formData.companyName}\n` +
+      `Target Desk: ${CONTACT_INFO.email}`;
 
-    window.location.href = `mailto:${CONTACT_INFO.email}?subject=${subject}&body=${body}`;
+    saveEnquiryLocally('Email');
+    setLastSubmission({ subject, body });
+
+    window.location.href = `mailto:${CONTACT_INFO.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setStatus('success');
+  };
+
+  const handleCopyDetails = () => {
+    if (!lastSubmission?.body) return;
+    navigator.clipboard.writeText(lastSubmission.body).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    });
   };
 
   return (
     <>
       <SEO 
-        title="Contact Us | Wholesale & Export Sourcing Desk"
-        description="Contact Classic Edge Atelier for wholesale inquiries, bulk quotes, and private-label manufacturing discussions. Email: classicedgeatlier@gmail.com, WhatsApp: +91 9443750820."
+        title="Contact Us | Wholesale & Export Sourcing Desk | Classic Edge Atelier"
+        description="Contact Classic Edge Atelier for wholesale inquiries, bulk quotes, and private-label manufacturing discussions. Email: classicedgeatelier@gmail.com, WhatsApp: +91 9443750820."
       />
 
       {/* Banner */}
@@ -371,32 +408,102 @@ export default function Contact() {
                   {errors.message && <span className="form-error-msg">{errors.message}</span>}
                 </div>
 
-                {/* Submission Action Buttons */}
-                <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginTop: 30 }}>
-                  <button
-                    type="button"
-                    className="btn-whatsapp"
-                    style={{ flex: '1 1 220px' }}
-                    onClick={handleWhatsAppSubmit}
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.074-2.027-.474-1.636-.676-2.69-2.348-2.771-2.457-.082-.109-.659-.877-.659-1.674 0-.796.417-1.189.565-1.353.149-.164.324-.205.433-.205.109 0 .218.001.313.006.1.005.234-.038.366.279.136.328.465 1.135.506 1.218.041.083.069.179.014.288-.055.109-.082.177-.164.273-.082.096-.172.214-.246.288-.082.083-.167.172-.072.336.095.164.423.698.908 1.129.624.555 1.15.727 1.314.809.164.082.261.069.358-.041.096-.11.41-4.78.52-6.42.109-.164.218-.137.368-.082.15.055.952.449 1.116.531.164.082.273.123.313.191.041.068.041.396-.103.801zM12 2C6.477 2 2 6.477 2 12c0 1.891.528 3.659 1.445 5.176L2 22l4.981-1.385A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.25c-1.611 0-3.11-.479-4.368-1.303l-.313-.206-2.887.803.803-2.822-.206-.328A8.204 8.204 0 013.75 12c0-4.549 3.701-8.25 8.25-8.25s8.25 3.701 8.25 8.25-3.701 8.25-8.25 8.25z"/>
-                    </svg>
-                    <span>Submit via WhatsApp (+91 9443750820)</span>
-                  </button>
+                {/* Submission Action Box with High Contrast and Clear Styling */}
+                <div style={{
+                  marginTop: '32px',
+                  background: '#19191d',
+                  border: '1.5px solid rgba(197, 160, 89, 0.35)',
+                  borderRadius: '12px',
+                  padding: '22px 24px',
+                  boxShadow: '0 6px 24px rgba(0, 0, 0, 0.35)'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px', flexWrap: 'wrap', gap: '8px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <span style={{
+                        display: 'inline-block',
+                        width: '8px',
+                        height: '8px',
+                        borderRadius: '50%',
+                        background: '#d4a340'
+                      }}></span>
+                      <span style={{
+                        fontFamily: 'Cinzel, Georgia, serif',
+                        fontSize: '13px',
+                        fontWeight: 700,
+                        color: '#f5e2b8',
+                        letterSpacing: '1px',
+                        textTransform: 'uppercase'
+                      }}>
+                        Direct Export Desk Dispatch
+                      </span>
+                    </div>
+                    <span style={{ fontSize: '11px', color: '#a6a29a' }}>
+                      Official Desk: <strong style={{ color: '#fff' }}>classicedgeatelier@gmail.com</strong>
+                    </span>
+                  </div>
 
-                  <button
-                    type="button"
-                    className="btn-primary"
-                    style={{ flex: '1 1 220px' }}
-                    onClick={handleEmailSubmit}
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                      <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    <span>Submit via Email Desk</span>
-                  </button>
+                  <p style={{ fontSize: '12px', color: '#b8b4ab', margin: '0 0 18px 0', lineHeight: 1.5 }}>
+                    Select your preferred dispatch channel. Both channels deliver your exact technical specifications directly to our partner manufacturing evaluation desk in India.
+                  </p>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '14px' }}>
+                    <button
+                      type="button"
+                      className="btn-whatsapp"
+                      onClick={handleWhatsAppSubmit}
+                      title="Open direct WhatsApp conversation with our export desk"
+                    >
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.074-2.027-.474-1.636-.676-2.69-2.348-2.771-2.457-.082-.109-.659-.877-.659-1.674 0-.796.417-1.189.565-1.353.149-.164.324-.205.433-.205.109 0 .218.001.313.006.1.005.234-.038.366.279.136.328.465 1.135.506 1.218.041.083.069.179.014.288-.055.109-.082.177-.164.273-.082.096-.172.214-.246.288-.082.083-.167.172-.072.336.095.164.423.698.908 1.129.624.555 1.15.727 1.314.809.164.082.261.069.358-.041.096-.11.41-4.78.52-6.42.109-.164.218-.137.368-.082.15.055.952.449 1.116.531.164.082.273.123.313.191.041.068.041.396-.103.801zM12 2C6.477 2 2 6.477 2 12c0 1.891.528 3.659 1.445 5.176L2 22l4.981-1.385A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.25c-1.611 0-3.11-.479-4.368-1.303l-.313-.206-2.887.803.803-2.822-.206-.328A8.204 8.204 0 013.75 12c0-4.549 3.701-8.25 8.25-8.25s8.25 3.701 8.25 8.25-3.701 8.25-8.25 8.25z"/>
+                      </svg>
+                      <span>Submit via WhatsApp (+91 9443750820)</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      className="btn-primary"
+                      onClick={handleEmailSubmit}
+                      title="Send formal quotation request to classicedgeatelier@gmail.com"
+                    >
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                      <span>Submit via Email Desk</span>
+                    </button>
+                  </div>
+
+                  {status === 'success' && (
+                    <div style={{
+                      marginTop: '18px',
+                      paddingTop: '16px',
+                      borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+                      display: 'flex',
+                      gap: '12px',
+                      flexWrap: 'wrap',
+                      alignItems: 'center'
+                    }}>
+                      {activeMethod === 'email' && (
+                        <a
+                          href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONTACT_INFO.email)}&su=${encodeURIComponent(lastSubmission?.subject || '')}&body=${encodeURIComponent(lastSubmission?.body || '')}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-gold"
+                          style={{ fontSize: '13px', padding: '10px 18px', textDecoration: 'none' }}
+                        >
+                          <span>Open in Gmail Web ↗</span>
+                        </a>
+                      )}
+                      <button
+                        type="button"
+                        className="btn-secondary"
+                        style={{ fontSize: '13px', padding: '10px 18px' }}
+                        onClick={handleCopyDetails}
+                      >
+                        <span>{copied ? 'Copied to Clipboard! ✓' : 'Copy Message Text'}</span>
+                      </button>
+                    </div>
+                  )}
                 </div>
               </form>
             </div>

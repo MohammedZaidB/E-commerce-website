@@ -47,12 +47,41 @@ export default function PrivateLabel() {
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const saveEnquiryLocally = (method) => {
+    try {
+      const existing = JSON.parse(localStorage.getItem('classic_edge_enquiries') || '[]');
+      const record = {
+        id: `PL-${Date.now().toString().slice(-6)}`,
+        date: new Date().toISOString(),
+        dateDisplay: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }),
+        channel: method,
+        buyer: {
+          fullName: formData.contactPersonName,
+          companyName: formData.companyName,
+          businessEmail: formData.businessEmail,
+          contactNumber: formData.whatsappNumber,
+          country: formData.country,
+          productCategory: formData.productCategory,
+          orderQuantity: formData.estimatedQuantity,
+          enquiryType: 'Private Label & Custom Branding',
+          message: `Branding: ${formData.brandingRequirements} | Details: ${formData.message}`
+        },
+        status: 'New'
+      };
+      existing.unshift(record);
+      localStorage.setItem('classic_edge_enquiries', JSON.stringify(existing));
+      return record;
+    } catch (e) {
+      console.warn('Could not save enquiry locally:', e);
+      return null;
+    }
+  };
+
+  const handleWhatsAppSubmit = (e) => {
     e.preventDefault();
     if (!validate()) return;
 
-    // Format WhatsApp pre-fill message
-    const formattedText = `*Private Label & Customisation Discussion - Classic Edge*\n` +
+    const formattedText = `*Private Label & Customisation Discussion - Classic Edge Atelier*\n` +
       `--------------------------------\n` +
       `*Company:* ${formData.companyName}\n` +
       `*Contact Person:* ${formData.contactPersonName}\n` +
@@ -64,8 +93,34 @@ export default function PrivateLabel() {
       `*Branding Requirement:* ${formData.brandingRequirements}\n` +
       `*Specifications / Message:* ${formData.message}`;
 
+    saveEnquiryLocally('WhatsApp');
     const encoded = encodeURIComponent(formattedText);
     window.open(`https://wa.me/${CONTACT_INFO.whatsappRaw}?text=${encoded}`, '_blank');
+    setSubmitSuccess(true);
+  };
+
+  const handleEmailSubmit = (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    const subject = `Private Label Enquiry: ${formData.companyName} - ${formData.productCategory} | Classic Edge Atelier`;
+    const body = 
+      `Dear Classic Edge Atelier Export Team,\n\n` +
+      `We wish to discuss a private label / custom manufacturing partnership:\n\n` +
+      `• Company Name: ${formData.companyName}\n` +
+      `• Contact Person: ${formData.contactPersonName}\n` +
+      `• Business Email: ${formData.businessEmail}\n` +
+      `• WhatsApp / Phone: ${formData.whatsappNumber}\n` +
+      `• Country: ${formData.country}\n` +
+      `• Target Product Category: ${formData.productCategory}\n` +
+      `• Estimated Order Quantity: ${formData.estimatedQuantity || 'Open for discussion'}\n` +
+      `• Custom Branding Options: ${formData.brandingRequirements}\n\n` +
+      `Specifications & Technical Scope:\n${formData.message}\n\n` +
+      `Destination Desk: ${CONTACT_INFO.email}\n` +
+      `Origin: India`;
+
+    saveEnquiryLocally('Email');
+    window.location.href = `mailto:${CONTACT_INFO.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSubmitSuccess(true);
   };
 
@@ -332,14 +387,70 @@ export default function PrivateLabel() {
                 {errors.message && <span className="form-error-msg">{errors.message}</span>}
               </div>
 
-              <div style={{ textAlign: 'center', marginTop: 32 }}>
-                <button type="submit" className="btn-gold" style={{ minWidth: 280 }}>
-                  <span>Request a Customisation Discussion</span>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </button>
+              {/* Clean High-Contrast Action Box */}
+              <div style={{
+                marginTop: '32px',
+                background: '#19191d',
+                border: '1.5px solid rgba(197, 160, 89, 0.35)',
+                borderRadius: '12px',
+                padding: '22px 24px',
+                boxShadow: '0 6px 24px rgba(0, 0, 0, 0.35)'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px', flexWrap: 'wrap', gap: '8px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span style={{
+                      display: 'inline-block',
+                      width: '8px',
+                      height: '8px',
+                      borderRadius: '50%',
+                      background: '#d4a340'
+                    }}></span>
+                    <span style={{
+                      fontFamily: 'Cinzel, Georgia, serif',
+                      fontSize: '13px',
+                      fontWeight: 700,
+                      color: '#f5e2b8',
+                      letterSpacing: '1px',
+                      textTransform: 'uppercase'
+                    }}>
+                      Official Export Desk Dispatch
+                    </span>
+                  </div>
+                  <span style={{ fontSize: '11px', color: '#a6a29a' }}>
+                    Official Desk: <strong style={{ color: '#fff' }}>classicedgeatelier@gmail.com</strong>
+                  </span>
+                </div>
+
+                <p style={{ fontSize: '12px', color: '#b8b4ab', margin: '0 0 18px 0', lineHeight: 1.5 }}>
+                  Select your preferred dispatch channel to submit your private-label specification directly to our production evaluation desk in India.
+                </p>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '14px' }}>
+                  <button
+                    type="button"
+                    className="btn-whatsapp"
+                    onClick={handleWhatsAppSubmit}
+                    title="Send private-label specifications via WhatsApp"
+                  >
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.074-2.027-.474-1.636-.676-2.69-2.348-2.771-2.457-.082-.109-.659-.877-.659-1.674 0-.796.417-1.189.565-1.353.149-.164.324-.205.433-.205.109 0 .218.001.313.006.1.005.234-.038.366.279.136.328.465 1.135.506 1.218.041.083.069.179.014.288-.055.109-.082.177-.164.273-.082.096-.172.214-.246.288-.082.083-.167.172-.072.336.095.164.423.698.908 1.129.624.555 1.15.727 1.314.809.164.082.261.069.358-.041.096-.11.41-4.78.52-6.42.109-.164.218-.137.368-.082.15.055.952.449 1.116.531.164.082.273.123.313.191.041.068.041.396-.103.801zM12 2C6.477 2 2 6.477 2 12c0 1.891.528 3.659 1.445 5.176L2 22l4.981-1.385A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.25c-1.611 0-3.11-.479-4.368-1.303l-.313-.206-2.887.803.803-2.822-.206-.328A8.204 8.204 0 013.75 12c0-4.549 3.701-8.25 8.25-8.25s8.25 3.701 8.25 8.25-3.701 8.25-8.25 8.25z"/>
+                    </svg>
+                    <span>Submit via WhatsApp (+91 9443750820)</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    className="btn-primary"
+                    onClick={handleEmailSubmit}
+                    title="Send private-label specifications to classicedgeatelier@gmail.com"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span>Submit via Email Desk</span>
+                  </button>
+                </div>
               </div>
             </form>
           </div>
