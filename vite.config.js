@@ -67,6 +67,38 @@ export default defineConfig({
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
           const rawUrl = req.url || '';
+          const urlPath = rawUrl.split('?')[0];
+
+          // Redirect legacy static html URLs to modern React SPA routes
+          if (urlPath === '/catalog.html' || urlPath === '/catalog' || urlPath === '/products.html') {
+            const query = rawUrl.includes('?') ? '?' + rawUrl.split('?')[1] : '';
+            res.writeHead(302, { Location: '/products' + query });
+            return res.end();
+          }
+
+          if (urlPath === '/about.html') {
+            res.writeHead(302, { Location: '/about' });
+            return res.end();
+          }
+          if (urlPath === '/contact.html') {
+            res.writeHead(302, { Location: '/contact' });
+            return res.end();
+          }
+          if (urlPath === '/private-label.html') {
+            res.writeHead(302, { Location: '/private-label' });
+            return res.end();
+          }
+          if (urlPath === '/wholesale-export.html') {
+            res.writeHead(302, { Location: '/wholesale-export' });
+            return res.end();
+          }
+
+          // Ensure refreshing on any SPA route serves the main React application index.html
+          const spaRoutes = ['/products', '/about', '/contact', '/private-label', '/wholesale-export', '/cart'];
+          if (spaRoutes.includes(urlPath)) {
+            req.url = '/index.html';
+          }
+
           const decoded = decodeURIComponent(rawUrl);
 
           if (decoded === '/api/extract-abaya') {

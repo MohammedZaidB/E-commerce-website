@@ -1,198 +1,254 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
+import { CONTACT_INFO } from '../data/marketsData';
 
 export default function Footer() {
   return (
-    <footer style={{
-      background: '#0d0d0f',
-      borderTop: '1px solid rgba(197, 160, 89, 0.25)',
-      padding: '50px 20px 24px',
-      color: '#fff',
-      fontSize: '13px'
-    }}>
-      <div className="footer-responsive-grid" style={{ maxWidth: '1240px', margin: '0 auto' }}>
-        {/* Col 1: Brand Info matching Mockup with Classic Edge Atelier */}
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+    <footer 
+      style={{
+        background: '#141416',
+        borderTop: '1px solid rgba(184, 155, 98, 0.3)',
+        padding: '70px 24px 32px',
+        color: '#F8F5EF',
+        fontSize: '13px'
+      }}
+    >
+      <div 
+        className="footer-responsive-grid" 
+        style={{ 
+          maxWidth: '1280px', 
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+          gap: '40px'
+        }}
+      >
+        {/* Col 1: Brand Info */}
+        <div style={{ maxWidth: '320px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
             <div style={{
               width: '38px',
               height: '38px',
-              border: '1.5px solid #c5a059',
+              border: '1.5px solid #B89B62',
               padding: '2px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              background: 'rgba(197, 160, 89, 0.08)',
-              borderRadius: '2px'
+              background: '#191919',
+              borderRadius: '2px',
+              flexShrink: 0
             }}>
-              <div style={{
-                width: '100%',
-                height: '100%',
-                border: '1px solid rgba(197, 160, 89, 0.6)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontFamily: 'Cinzel, Georgia, serif',
+              <span style={{
+                fontFamily: "'Cinzel', Georgia, serif",
                 fontWeight: 800,
-                fontSize: '15px',
-                color: '#f5e2b8',
-                letterSpacing: '1px',
-                lineHeight: 1
+                fontSize: '14px',
+                color: '#B89B62',
+                letterSpacing: '1px'
               }}>
                 CE
-              </div>
+              </span>
             </div>
             <div>
               <div style={{
-                fontFamily: 'Cinzel, Georgia, serif',
-                fontSize: '15px',
+                fontFamily: "'Cinzel', Georgia, serif",
+                fontSize: '16px',
                 fontWeight: 800,
                 letterSpacing: '2.5px',
-                color: '#f5e2b8',
+                color: '#F8F5EF',
                 lineHeight: 1.1
               }}>
                 CLASSIC EDGE
               </div>
               <div style={{
                 fontSize: '8px',
-                letterSpacing: '1.8px',
+                letterSpacing: '1.6px',
                 textTransform: 'uppercase',
-                color: '#9e9a91',
+                color: '#B89B62',
                 marginTop: '3px',
                 fontWeight: 600
               }}>
-                ATELIER · LEATHER FOOTWEAR · BAGS · ACCESSORIES
+                ATELIER · LEATHER · TEXTILE EXPORT
               </div>
             </div>
           </div>
+
+          <p style={{ fontSize: '13px', color: '#968F87', lineHeight: 1.6, margin: '0 0 20px' }}>
+            Handcrafted leather footwear, artisanal slippers, executive leather goods, and modest wear designed with refined craftsmanship and supplied directly from India for international trade.
+          </p>
+
+          <div style={{ fontSize: '11px', color: '#B89B62', letterSpacing: '1px', textTransform: 'uppercase', fontWeight: 600 }}>
+            MIDDLE EAST &amp; GLOBAL TRADE DESK
+          </div>
         </div>
 
-        {/* Col 2: Quick Links */}
+        {/* Col 2: Collections */}
         <div>
           <h4 style={{
+            fontFamily: "'Cinzel', Georgia, serif",
             fontSize: '13px',
             fontWeight: 700,
-            color: '#fff',
-            marginBottom: '14px',
-            textTransform: 'none',
-            letterSpacing: '0.3px'
+            color: '#F8F5EF',
+            marginBottom: '18px',
+            letterSpacing: '1.5px',
+            textTransform: 'uppercase'
           }}>
-            Quick Links
+            Collections
           </h4>
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <li><Link to="/" style={{ color: '#a6a29a', textDecoration: 'none', fontSize: '12.5px' }}>Home</Link></li>
-            <li><Link to="/products" style={{ color: '#a6a29a', textDecoration: 'none', fontSize: '12.5px' }}>Shop</Link></li>
-            <li><Link to="/about" style={{ color: '#a6a29a', textDecoration: 'none', fontSize: '12.5px' }}>About Us</Link></li>
-            <li><Link to="/contact" style={{ color: '#a6a29a', textDecoration: 'none', fontSize: '12.5px' }}>Contact</Link></li>
-          </ul>
-        </div>
-
-        {/* Col 3: Customer Support */}
-        <div>
-          <h4 style={{
-            fontSize: '13px',
-            fontWeight: 700,
-            color: '#fff',
-            marginBottom: '14px',
-            textTransform: 'none',
-            letterSpacing: '0.3px'
-          }}>
-            Customer Support
-          </h4>
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <li><Link to="/about" style={{ color: '#a6a29a', textDecoration: 'none', fontSize: '12.5px' }}>FAQs</Link></li>
-            <li><Link to="/wholesale-export" style={{ color: '#a6a29a', textDecoration: 'none', fontSize: '12.5px' }}>Shipping Policy</Link></li>
-            <li><Link to="/private-label" style={{ color: '#a6a29a', textDecoration: 'none', fontSize: '12.5px' }}>Return & Refund Policy</Link></li>
-            <li><Link to="/wholesale-export" style={{ color: '#a6a29a', textDecoration: 'none', fontSize: '12.5px' }}>Terms & Conditions</Link></li>
-          </ul>
-        </div>
-
-        {/* Col 4: Get in Touch with exact business card details */}
-        <div>
-          <h4 style={{
-            fontSize: '13px',
-            fontWeight: 700,
-            color: '#fff',
-            marginBottom: '14px',
-            textTransform: 'none',
-            letterSpacing: '0.3px'
-          }}>
-            Get in Touch
-          </h4>
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '9px', fontSize: '12.5px', color: '#a6a29a' }}>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
-              <a href="mailto:classicedgeatelier@gmail.com" style={{ color: '#a6a29a', textDecoration: 'none' }}>classicedgeatelier@gmail.com</a>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li>
+              <Link to="/products?category=shoes" style={{ color: '#968F87', textDecoration: 'none', transition: 'color 0.2s' }}>
+                Leather Footwear (31 Styles)
+              </Link>
             </li>
-            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginTop: '3px' }}>
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-              </svg>
+            <li>
+              <Link to="/products?category=abaya-collection" style={{ color: '#968F87', textDecoration: 'none', transition: 'color 0.2s' }}>
+                Abaya Modest Wear (26 Styles)
+              </Link>
+            </li>
+            <li>
+              <Link to="/products?category=leather-slippers" style={{ color: '#968F87', textDecoration: 'none', transition: 'color 0.2s' }}>
+                Arabic Leather Slides
+              </Link>
+            </li>
+            <li>
+              <Link to="/products?category=wallets" style={{ color: '#968F87', textDecoration: 'none', transition: 'color 0.2s' }}>
+                Full-Grain Wallets
+              </Link>
+            </li>
+            <li>
+              <Link to="/products?category=bags" style={{ color: '#968F87', textDecoration: 'none', transition: 'color 0.2s' }}>
+                Executive Bags &amp; Belts
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Col 3: Client Services */}
+        <div>
+          <h4 style={{
+            fontFamily: "'Cinzel', Georgia, serif",
+            fontSize: '13px',
+            fontWeight: 700,
+            color: '#F8F5EF',
+            marginBottom: '18px',
+            letterSpacing: '1.5px',
+            textTransform: 'uppercase'
+          }}>
+            Trade Services
+          </h4>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li>
+              <Link to="/wholesale-export" style={{ color: '#968F87', textDecoration: 'none' }}>
+                Wholesale Sourcing Process
+              </Link>
+            </li>
+            <li>
+              <Link to="/private-label" style={{ color: '#968F87', textDecoration: 'none' }}>
+                Private Label &amp; OEM Branding
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" style={{ color: '#968F87', textDecoration: 'none' }}>
+                Partner Tannery Inspection
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" style={{ color: '#968F87', textDecoration: 'none' }}>
+                Export Carton Specifications
+              </Link>
+            </li>
+            <li>
+              <Link to="/cart" style={{ color: '#968F87', textDecoration: 'none' }}>
+                Sample Order Bag
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Col 4: Contact & Atelier Desk */}
+        <div>
+          <h4 style={{
+            fontFamily: "'Cinzel', Georgia, serif",
+            fontSize: '13px',
+            fontWeight: 700,
+            color: '#F8F5EF',
+            marginBottom: '18px',
+            letterSpacing: '1.5px',
+            textTransform: 'uppercase'
+          }}>
+            Official Trade Desk
+          </h4>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '12.5px', color: '#968F87' }}>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <Mail size={15} color="#B89B62" />
+              <a href="mailto:classicedgeatelier@gmail.com" style={{ color: '#968F87', textDecoration: 'none' }}>
+                classicedgeatelier@gmail.com
+              </a>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <Phone size={15} color="#B89B62" />
               <div>
-                <a href="tel:+919443750820" style={{ color: '#a6a29a', textDecoration: 'none', display: 'block' }}>+91 9443750820</a>
-                <a href="tel:+91720047992" style={{ color: '#a6a29a', textDecoration: 'none', display: 'block' }}>+91 720047992</a>
+                <a href="tel:+919443750820" style={{ color: '#968F87', textDecoration: 'none' }}>
+                  +91 9443750820
+                </a>
+                <span style={{ color: '#77716A', margin: '0 4px' }}>•</span>
+                <a href="tel:+91720047992" style={{ color: '#968F87', textDecoration: 'none' }}>
+                  +91 720047992
+                </a>
               </div>
             </li>
-            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginTop: '3px', flexShrink: 0 }}>
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              <span style={{ lineHeight: 1.4 }}>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+              <MapPin size={15} color="#B89B62" style={{ marginTop: '3px', flexShrink: 0 }} />
+              <span style={{ lineHeight: 1.5 }}>
                 No:111/A Kandrampalli Road<br />
-                Cross Street, Thuthipet, Ambur<br />
-                635811, Tamil Nadu, India
+                Thuthipet, Ambur 635811<br />
+                Tamil Nadu, India
               </span>
             </li>
           </ul>
-        </div>
 
-        {/* Col 5: Follow Us */}
-        <div>
-          <h4 style={{
-            fontSize: '13px',
-            fontWeight: 700,
-            color: '#fff',
-            marginBottom: '14px',
-            textTransform: 'none',
-            letterSpacing: '0.3px'
-          }}>
-            Follow Us
-          </h4>
-          <div style={{ display: 'flex', gap: '14px', color: '#a6a29a', fontSize: '16px' }}>
-            <span style={{ cursor: 'pointer' }} title="Instagram">📷</span>
-            <span style={{ cursor: 'pointer' }} title="Facebook">📘</span>
-            <span style={{ cursor: 'pointer' }} title="YouTube">▶️</span>
-            <span style={{ cursor: 'pointer' }} title="X">𝕏</span>
+          <div style={{ marginTop: '20px' }}>
+            <a 
+              href={CONTACT_INFO.whatsappLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-whatsapp"
+              style={{ fontSize: '11px', padding: '8px 14px' }}
+            >
+              <span>WhatsApp Trade Desk</span>
+              <ArrowUpRight size={13} />
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Sub-footer Bottom Bar matching Mockup */}
-      <div style={{
-        maxWidth: '1240px',
-        margin: '40px auto 0',
-        paddingTop: '20px',
-        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        flexWrap: 'wrap',
-        gap: '12px',
-        fontSize: '12px',
-        color: '#7a766e'
-      }}>
-        <div>&copy; 2026 Classic Edge Atelier. All rights reserved.</div>
+      {/* Sub-footer Bottom Bar */}
+      <div 
+        style={{
+          maxWidth: '1280px',
+          margin: '50px auto 0',
+          paddingTop: '24px',
+          borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '14px',
+          fontSize: '12px',
+          color: '#77716A'
+        }}
+      >
+        <div>
+          &copy; {new Date().getFullYear()} Classic Edge Atelier. All rights reserved.
+        </div>
         <div style={{
-          fontFamily: 'Cinzel, Georgia, serif',
+          fontFamily: "'Playfair Display', Georgia, serif",
           fontStyle: 'italic',
-          color: 'var(--gold-light, #f5e2b8)',
-          letterSpacing: '0.5px'
+          color: '#B89B62',
+          letterSpacing: '0.8px'
         }}>
-          Crafted Today, Legacy Tomorrow.
+          Crafted with Purpose. Designed to Last.
         </div>
       </div>
     </footer>

@@ -1,21 +1,73 @@
-/* Bolf Group Style - Classic Edge B2B Design Tokens */
-:root {
-  --ink: #0d0d0d;
-  --dark-surface: #141414;
-  --dark-border: #262626;
-  --accent: #c85a17; /* Warm leather saddle / cognac accent inspired by Bolf red */
-  --accent-hover: #b0490f;
-  --accent-gold: #d4a340;
-  --paper: #ffffff;
-  --concrete: #f4f2ef;
-  --steel: #6b6b6b;
-  --hairline: #e3e0da;
+/* ==========================================================================
+   CLASSIC EDGE ATELIER — LUXURY EDITORIAL DESIGN SYSTEM
+   Brand Colors:
+     Primary Background:   #F8F5EF (Soft Ivory / Cream)
+     Primary Text:         #191919 (Deep Refined Charcoal / Onyx)
+     Accent Gold:          #B89B62 (Brushed Champagne Gold)
+     Accent Gold Hover:    #9E824C (Deep Gold)
+     Secondary Background: #EDE5D8 (Warm Sand Linen)
+     White:                #FFFFFF (Pristine White)
+     Secondary Text:       #77716A (Muted Taupe Grey)
+     Borders:              #E5DED3 (Subtle Warm Border)
+   Typography:
+     Serif Headings: 'Playfair Display', 'Cormorant Garamond', 'Cinzel', Georgia, serif
+     Sans-serif Body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif
+   ========================================================================== */
 
-  --font-display: 'Roboto Condensed', -apple-system, sans-serif;
-  --font-body: 'Roboto', -apple-system, sans-serif;
+:root {
+  /* Brand Palette */
+  --bg-primary: #F8F5EF;
+  --bg-secondary: #EDE5D8;
+  --bg-white: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-elevated: #F2ECE1;
+  --bg-dark: #141416;
+
+  --text-primary: #191919;
+  --text-secondary: #77716A;
+  --text-muted: #968F87;
+  --text-light: #F8F5EF;
+
+  --accent-gold: #B89B62;
+  --accent-gold-hover: #9E824C;
+  --accent-gold-light: #D9C59F;
+  --accent-gold-subtle: rgba(184, 155, 98, 0.12);
+  --accent-gold-border: rgba(184, 155, 98, 0.35);
+
+  --border-color: #E5DED3;
+  --border-light: #ECE7DE;
+  --border-focus: #B89B62;
+
+  --shadow-subtle: 0 2px 10px rgba(25, 25, 25, 0.04);
+  --shadow-card: 0 4px 20px rgba(25, 25, 25, 0.06);
+  --shadow-elevated: 0 10px 30px rgba(25, 25, 25, 0.09);
+
+  /* Typography Stacks */
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-arabic: 'Cairo', Arial, sans-serif;
+
+  /* Spacing Scale */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Legacy mappings for backwards-compatibility across components */
+  --ink: #191919;
+  --dark-surface: #141416;
+  --dark-border: #2A2A2E;
+  --accent: #B89B62;
+  --accent-hover: #9E824C;
+  --paper: #F8F5EF;
+  --concrete: #EDE5D8;
+  --steel: #77716A;
+  --hairline: #E5DED3;
 }
 
+/* ================= Global Reset & Defaults ================= */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -27,16 +79,20 @@ html {
   overflow-x: hidden;
   max-width: 100vw;
   width: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 body {
-  font-family: var(--font-body);
-  color: var(--ink);
-  background: var(--paper);
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
   overflow-x: hidden;
   max-width: 100vw;
   width: 100%;
-  line-height: 1.5;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .site-wrapper {
@@ -44,23 +100,24 @@ body {
   max-width: 100vw;
   width: 100%;
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.display {
-  font-family: var(--font-display);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+#main-content {
+  flex: 1 0 auto;
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -69,104 +126,187 @@ button {
   cursor: pointer;
   border: none;
   background: none;
+  transition: all 0.2s ease;
 }
 
-/* RTL Support */
-html[dir="rtl"] body {
-  font-family: var(--font-arabic);
+/* Accessible focus outlines */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 2px;
 }
 
-html[dir="rtl"] .display {
-  font-family: var(--font-arabic);
-  font-weight: 800;
-  letter-spacing: 0;
-  text-transform: none;
+/* ================= Typography Utilities ================= */
+.font-serif {
+  font-family: var(--font-serif);
 }
 
-/* Bolf-Style Buttons */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ================= Editorial Luxury Buttons ================= */
+.btn-primary,
 .cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  background: var(--accent);
-  color: #ffffff !important;
-  padding: 15px 32px;
-  font-family: var(--font-display);
+  gap: 10px;
+  background: var(--text-primary);
+  color: #FFFFFF !important;
+  padding: 14px 30px;
+  font-family: var(--font-sans);
   font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  font-weight: 600;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  border-radius: 2px;
-  transition: background 0.2s ease, transform 0.15s ease;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--text-primary);
+  box-shadow: 0 4px 12px rgba(25, 25, 25, 0.12);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease, border-color 0.25s ease;
+  cursor: pointer;
 }
 
+.btn-primary:hover,
 .cta:hover {
-  background: var(--accent-hover);
-  transform: translateY(-1px);
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(184, 155, 98, 0.25);
 }
 
+.btn-secondary,
 .cta-ghost {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  color: #ffffff !important;
-  padding: 15px 32px;
-  font-family: var(--font-display);
+  gap: 10px;
+  background: transparent;
+  color: var(--text-primary) !important;
+  padding: 13px 28px;
+  font-family: var(--font-sans);
   font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  font-weight: 600;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  border-radius: 2px;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-color);
+  transition: all 0.25s ease;
+  cursor: pointer;
 }
 
+.btn-secondary:hover,
 .cta-ghost:hover {
-  border-color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold) !important;
+  background: var(--accent-gold-subtle);
+  transform: translateY(-2px);
 }
 
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--accent-gold);
+  color: #FFFFFF !important;
+  padding: 14px 30px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--accent-gold);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-gold:hover {
+  background: var(--accent-gold-hover);
+  border-color: var(--accent-gold-hover);
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp,
 .cta-whatsapp {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: #25D366;
-  color: #ffffff !important;
-  padding: 15px 28px;
-  font-family: var(--font-display);
+  background: #128C7E;
+  color: #FFFFFF !important;
+  padding: 13px 26px;
+  font-family: var(--font-sans);
   font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border-radius: 2px;
-  transition: background 0.2s ease;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-xs);
+  transition: background 0.2s ease, transform 0.2s ease;
+  border: none;
 }
 
+.btn-whatsapp:hover,
 .cta-whatsapp:hover {
-  background: #1eb956;
+  background: #075E54;
+  transform: translateY(-1px);
 }
 
 /* Eyebrow Label */
 .eyebrow {
-  font-size: 12px;
-  letter-spacing: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-gold);
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
-/* Scroll reveal utility */
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  background: var(--accent-gold);
+}
+
+/* ================= Micro-interactions & Helpers ================= */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.visible {
   opacity: 1;
   transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

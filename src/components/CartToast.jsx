@@ -56,12 +56,12 @@ export default function CartToast() {
           width: '40px',
           height: '40px',
           borderRadius: '50%',
-          background: 'rgba(16, 185, 129, 0.2)',
-          color: '#10b981',
+          background: 'rgba(184, 155, 98, 0.15)',
+          color: '#B89B62',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          fontWeight: 800
+          fontWeight: 700
         }}>
           ✓
         </div>
@@ -69,10 +69,10 @@ export default function CartToast() {
 
       {/* Message Text */}
       <div style={{ flex: 1 }}>
-        <div style={{ fontSize: '13px', fontWeight: 700, color: '#f3c969' }}>
-          Added to Cart!
+        <div style={{ fontSize: '13px', fontWeight: 600, color: '#B89B62', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+          Added to Bag
         </div>
-        <div style={{ fontSize: '12px', color: '#ccc', marginTop: '2px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '200px' }}>
+        <div style={{ fontSize: '12px', color: '#EDE5D8', marginTop: '2px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '200px' }}>
           {toastMessage.item?.name || toastMessage.message}
         </div>
       </div>
@@ -83,17 +83,20 @@ export default function CartToast() {
           to="/cart"
           onClick={dismissToast}
           style={{
-            background: 'linear-gradient(135deg, #d4a340 0%, #b8860b 100%)',
-            color: '#0d0d0d',
-            padding: '8px 12px',
-            borderRadius: '6px',
+            background: '#B89B62',
+            color: '#141416',
+            padding: '8px 14px',
+            borderRadius: '4px',
             fontSize: '11px',
-            fontWeight: 800,
+            fontWeight: 700,
+            letterSpacing: '0.04em',
             textDecoration: 'none',
-            whiteSpace: 'nowrap'
+            whiteSpace: 'nowrap',
+            textTransform: 'uppercase',
+            transition: 'background 0.2s ease'
           }}
         >
-          View Cart ({totalItems})
+          View Bag ({totalItems})
         </Link>
         <button
           onClick={dismissToast}

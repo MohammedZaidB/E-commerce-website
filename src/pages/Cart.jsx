@@ -88,62 +88,57 @@ export default function Cart() {
         description="Review your luxury leather items, select quantities, and proceed to secure real-time payment with Google Pay, Cards, and Net Banking."
       />
 
-      <div style={{ maxWidth: '1240px', margin: '30px auto 80px', padding: '0 16px' }}>
+      <div style={{ maxWidth: '1280px', margin: '40px auto 90px', padding: '0 20px' }}>
         {/* Breadcrumb & Title */}
-        <div style={{ marginBottom: '28px' }}>
-          <div style={{ fontSize: '12px', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>
-            <Link to="/" style={{ color: '#888' }}>Home</Link> / <Link to="/products" style={{ color: '#888' }}>Catalogue</Link> / <span style={{ color: 'var(--accent-gold, #d4a340)' }}>Shopping Cart</span>
+        <div style={{ marginBottom: '32px' }}>
+          <div style={{ fontSize: '11.5px', color: '#77716A', textTransform: 'uppercase', letterSpacing: '1.2px', marginBottom: '8px' }}>
+            <Link to="/" style={{ color: '#77716A' }}>Home</Link> / <Link to="/products" style={{ color: '#77716A' }}>Catalogue</Link> / <span style={{ color: '#B89B62' }}>Shopping Bag</span>
           </div>
-          <h1 style={{ fontFamily: 'Cinzel, Georgia, serif', fontSize: 'clamp(24px, 4.5vw, 32px)', fontWeight: 800, margin: 0, color: 'var(--ink, #111)' }}>
-            Your Atelier Cart ({totalItems} {totalItems === 1 ? 'Item' : 'Items'})
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 700, margin: 0, color: '#191919' }}>
+            Your Atelier Bag ({totalItems} {totalItems === 1 ? 'Item' : 'Items'})
           </h1>
-          <p style={{ color: '#666', fontSize: '14px', marginTop: '6px' }}>
-            Handcrafted Indian leather footwear, bags & accessories prepared for wholesale dispatch.
+          <p style={{ color: '#77716A', fontSize: '14px', marginTop: '6px' }}>
+            Handcrafted Indian leather footwear, accessories &amp; modest wear prepared for wholesale dispatch.
           </p>
         </div>
 
         {cartItems.length === 0 ? (
           <div style={{
-            background: '#faf9f6',
-            border: '1px dashed #d5d0c5',
-            borderRadius: '12px',
-            padding: '60px 20px',
+            background: '#FFFFFF',
+            border: '1px solid #E5DED3',
+            borderRadius: '6px',
+            padding: '70px 20px',
             textAlign: 'center',
-            marginTop: '20px'
+            marginTop: '20px',
+            boxShadow: '0 4px 16px rgba(25, 25, 25, 0.03)'
           }}>
             <div style={{
               width: '64px',
               height: '64px',
               borderRadius: '50%',
-              background: '#eee',
+              background: '#F8F5EF',
+              border: '1px solid #E5DED3',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               margin: '0 auto 16px',
-              color: '#888'
+              color: '#B89B62'
             }}>
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                 <circle cx="9" cy="21" r="1"></circle>
                 <circle cx="20" cy="21" r="1"></circle>
                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
               </svg>
             </div>
-            <h2 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '8px' }}>Your cart is empty</h2>
-            <p style={{ color: '#666', fontSize: '14px', maxWidth: '420px', margin: '0 auto 24px' }}>
-              You haven't added any handcrafted leather products yet. Explore our curated collections of shoes, slippers, wallets, and bags.
+            <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '22px', fontWeight: 700, marginBottom: '8px', color: '#191919' }}>
+              Your Atelier Bag is Empty
+            </h2>
+            <p style={{ color: '#77716A', fontSize: '14px', maxWidth: '440px', margin: '0 auto 24px' }}>
+              Explore our curated collections of handcrafted leather shoes, artisanal slides, executive wallets, and luxury abayas.
             </p>
             <Link
               to="/products"
-              style={{
-                display: 'inline-block',
-                background: 'linear-gradient(135deg, #d4a340 0%, #b8860b 100%)',
-                color: '#0d0d0d',
-                padding: '12px 28px',
-                borderRadius: '6px',
-                fontWeight: 700,
-                fontSize: '14px',
-                boxShadow: '0 4px 14px rgba(212, 163, 64, 0.3)'
-              }}
+              className="btn-primary"
             >
               Explore Catalogue &rarr;
             </Link>
@@ -158,11 +153,11 @@ export default function Cart() {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 paddingBottom: '14px',
-                borderBottom: '2px solid #111',
+                borderBottom: '1px solid #E5DED3',
                 marginBottom: '18px'
               }}>
-                <span style={{ fontWeight: 700, fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                  Product Details
+                <span style={{ fontWeight: 700, fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', color: '#191919' }}>
+                  Selected Atelier Pieces
                 </span>
                 <button
                   type="button"
@@ -491,24 +486,24 @@ export default function Cart() {
             {/* Right Column: Order Summary & Proceed to Pay button */}
             <div style={{ position: 'sticky', top: '100px' }}>
               <div style={{
-                background: '#fff',
-                border: '1px solid #e2ddd2',
-                borderRadius: '12px',
-                padding: '24px',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.06)'
+                background: '#FFFFFF',
+                border: '1px solid #E5DED3',
+                borderRadius: '6px',
+                padding: '28px',
+                boxShadow: '0 4px 20px rgba(25, 25, 25, 0.04)'
               }}>
-                <h2 style={{ fontSize: '18px', fontWeight: 700, margin: '0 0 16px', borderBottom: '1px solid #eee', paddingBottom: '12px' }}>
+                <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '19px', fontWeight: 700, margin: '0 0 16px', borderBottom: '1px solid #E5DED3', paddingBottom: '12px', color: '#191919' }}>
                   Order Summary
                 </h2>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '13.5px', color: '#444' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13.5px', color: '#77716A' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span>Items Subtotal:</span>
-                    <span style={{ fontWeight: 600, color: '#111' }}>₹ {subtotal.toLocaleString('en-IN')}</span>
+                    <span style={{ fontWeight: 600, color: '#191919' }}>₹ {subtotal.toLocaleString('en-IN')}</span>
                   </div>
 
                   {discountAmount > 0 && (
-                    <div style={{ display: 'flex', justifyContent: 'space-between', color: '#10b981' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', color: '#128C7E' }}>
                       <span>Discount ({couponCode}):</span>
                       <span>- ₹ {discountAmount.toLocaleString('en-IN')}</span>
                     </div>
@@ -516,7 +511,7 @@ export default function Cart() {
 
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span>Express Air Shipping:</span>
-                    <span>{shipping === 0 ? <strong style={{ color: '#10b981' }}>FREE</strong> : `₹ ${shipping}`}</span>
+                    <span>{shipping === 0 ? <strong style={{ color: '#128C7E' }}>FREE</strong> : `₹ ${shipping}`}</span>
                   </div>
 
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -527,24 +522,25 @@ export default function Cart() {
                   <div style={{
                     display: 'flex',
                     justifyContent: 'space-between',
-                    borderTop: '2px solid #111',
-                    paddingTop: '12px',
-                    marginTop: '6px',
+                    alignItems: 'center',
+                    borderTop: '1px solid #E5DED3',
+                    paddingTop: '14px',
+                    marginTop: '8px',
                     fontSize: '18px',
-                    fontWeight: 800,
-                    color: '#000'
+                    fontWeight: 700,
+                    color: '#191919'
                   }}>
                     <span>Grand Total:</span>
-                    <span style={{ color: '#b8860b', fontFamily: 'Cinzel, Georgia, serif' }}>
+                    <span style={{ color: '#B89B62', fontFamily: "'Playfair Display', Georgia, serif", fontSize: '20px', fontWeight: 700 }}>
                       ₹ {finalTotal.toLocaleString('en-IN')}
                     </span>
                   </div>
                 </div>
 
                 {/* Promo Code Input */}
-                <form onSubmit={handleApplyPromo} style={{ marginTop: '20px', borderTop: '1px dashed #ddd', paddingTop: '16px' }}>
-                  <label style={{ fontSize: '11.5px', color: '#666', display: 'block', marginBottom: '6px' }}>
-                    Have a promo or wholesale voucher?
+                <form onSubmit={handleApplyPromo} style={{ marginTop: '22px', borderTop: '1px dashed #E5DED3', paddingTop: '18px' }}>
+                  <label style={{ fontSize: '12px', color: '#77716A', display: 'block', marginBottom: '6px' }}>
+                    Promo or Wholesale Voucher Code
                   </label>
                   <div style={{ display: 'flex', gap: '6px' }}>
                     <input
@@ -554,23 +550,25 @@ export default function Cart() {
                       onChange={(e) => setPromoInput(e.target.value)}
                       style={{
                         flex: 1,
-                        padding: '8px 10px',
-                        border: '1px solid #ccc',
-                        borderRadius: '4px',
-                        fontSize: '12px',
-                        textTransform: 'uppercase'
+                        padding: '10px 12px',
+                        border: '1px solid #E5DED3',
+                        background: '#F8F5EF',
+                        borderRadius: '2px',
+                        fontSize: '12.5px',
+                        textTransform: 'uppercase',
+                        color: '#191919'
                       }}
                     />
                     <button
                       type="submit"
                       style={{
-                        background: '#111',
-                        color: '#C5A059',
+                        background: '#191919',
+                        color: '#FFFFFF',
                         border: 'none',
-                        borderRadius: '4px',
-                        padding: '8px 14px',
+                        borderRadius: '2px',
+                        padding: '10px 16px',
                         fontSize: '12px',
-                        fontWeight: 700,
+                        fontWeight: 600,
                         cursor: 'pointer'
                       }}
                     >
@@ -581,7 +579,7 @@ export default function Cart() {
                     <div style={{
                       fontSize: '11px',
                       marginTop: '6px',
-                      color: couponMessage.success ? '#10b981' : '#ef4444'
+                      color: couponMessage.success ? '#128C7E' : '#B91C1C'
                     }}>
                       {couponMessage.message}
                     </div>
@@ -592,27 +590,16 @@ export default function Cart() {
                 <button
                   type="button"
                   onClick={handleProceedToPay}
+                  className="btn-primary"
                   style={{
                     width: '100%',
                     marginTop: '24px',
-                    background: 'linear-gradient(135deg, #d4a340 0%, #b8860b 100%)',
-                    color: '#0d0d0d',
-                    border: 'none',
-                    borderRadius: '8px',
                     padding: '16px',
-                    fontSize: '16px',
-                    fontWeight: 800,
-                    letterSpacing: '0.5px',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '10px',
-                    boxShadow: '0 6px 20px rgba(212, 163, 64, 0.4)',
-                    transition: 'transform 0.15s ease'
+                    fontSize: '14px',
+                    letterSpacing: '0.8px'
                   }}
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <rect x="2" y="5" width="20" height="14" rx="2"></rect>
                     <line x1="2" y1="10" x2="22" y2="10"></line>
                   </svg>

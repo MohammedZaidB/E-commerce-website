@@ -181,208 +181,130 @@ export default function Products({ onOpenQuoteModal }) {
       />
 
       {/* Page Header */}
-      <section className="page-banner" style={{ background: 'linear-gradient(180deg, #16161a 0%, #0d0d0f 100%)', color: '#fff' }}>
-        <div className="container text-center">
-          <span className="eyebrow" style={{ color: 'var(--accent-gold, #d4a340)' }}>Direct Manufacturer & Exporter</span>
-          <h1 className="page-banner-title">Authentic Product Catalogue</h1>
-          <p className="page-banner-subtitle">
-            Explore 31 real factory footwear styles and our complete Abaya wholesale line sheet from <strong>abaya.pdf</strong>.
+      <section className="page-banner" style={{ background: '#F8F5EF', borderBottom: '1px solid #E5DED3', padding: '60px 20px', color: '#191919' }}>
+        <div className="container text-center" style={{ maxWidth: '1000px', margin: '0 auto' }}>
+          <div className="eyebrow" style={{ justifyContent: 'center' }}>
+            ATELIER CATALOGUE • EXPORT READY
+          </div>
+          <h1 
+            style={{
+              fontFamily: "'Playfair Display', 'Cormorant Garamond', Georgia, serif",
+              fontSize: 'clamp(32px, 4.5vw, 48px)',
+              fontWeight: 700,
+              color: '#191919',
+              margin: '0 0 14px'
+            }}
+          >
+            Collections &amp; Portfolio
+          </h1>
+          <p style={{ fontSize: '15px', color: '#77716A', maxWidth: '640px', margin: '0 auto 30px', lineHeight: 1.6 }}>
+            Explore 31 authentic factory footwear styles, our complete 26-design Abaya wholesale line sheet from <strong>abaya.pdf</strong>, and handcrafted leather accessories.
           </p>
 
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '22px', flexWrap: 'wrap' }}>
-            <button
-              type="button"
-              onClick={() => setSelectedCategory('all')}
-              style={{
-                background: selectedCategory === 'all' ? '#d4a340' : 'rgba(255, 255, 255, 0.1)',
-                color: selectedCategory === 'all' ? '#0d0d0d' : '#f5e2b8',
-                border: '1px solid rgba(212, 163, 64, 0.5)',
-                padding: '9px 20px',
-                borderRadius: '24px',
-                fontSize: '13px',
-                fontWeight: 700,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                transition: 'all 0.2s ease'
-              }}
-            >
-              <span>🌟 All Items</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setSelectedCategory('leather-items')}
-              style={{
-                background: selectedCategory === 'leather-items' ? '#10b981' : 'rgba(16, 185, 129, 0.15)',
-                color: selectedCategory === 'leather-items' ? '#000' : '#34d399',
-                border: '1px solid #10b981',
-                padding: '9px 20px',
-                borderRadius: '24px',
-                fontSize: '13px',
-                fontWeight: 700,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                transition: 'all 0.2s ease'
-              }}
-            >
-              <span>👞 Leather Items</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setSelectedCategory('abaya-collection')}
-              style={{
-                background: selectedCategory === 'abaya-collection' ? '#EA4335' : 'rgba(234, 67, 53, 0.15)',
-                color: selectedCategory === 'abaya-collection' ? '#fff' : '#f87171',
-                border: '1px solid #EA4335',
-                padding: '9px 20px',
-                borderRadius: '24px',
-                fontSize: '13px',
-                fontWeight: 700,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                transition: 'all 0.2s ease'
-              }}
-            >
-              <span>🧕 Abayas (26 Styles)</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setSelectedCategory('shirts')}
-              style={{
-                background: selectedCategory === 'shirts' ? '#2563eb' : 'rgba(37, 99, 235, 0.15)',
-                color: selectedCategory === 'shirts' ? '#fff' : '#93c5fd',
-                border: '1px solid #2563eb',
-                padding: '9px 20px',
-                borderRadius: '24px',
-                fontSize: '13px',
-                fontWeight: 700,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                transition: 'all 0.2s ease'
-              }}
-            >
-              <span>👔 Shirts</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setSelectedCategory('pants')}
-              style={{
-                background: selectedCategory === 'pants' ? '#7c3aed' : 'rgba(124, 58, 237, 0.15)',
-                color: selectedCategory === 'pants' ? '#fff' : '#c4b5fd',
-                border: '1px solid #7c3aed',
-                padding: '9px 20px',
-                borderRadius: '24px',
-                fontSize: '13px',
-                fontWeight: 700,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                transition: 'all 0.2s ease'
-              }}
-            >
-              <span>👖 Pants & Trousers</span>
-            </button>
+          {/* Category Filter Pills */}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', flexWrap: 'wrap' }}>
+            {[
+              { id: 'all', label: 'All Collections' },
+              { id: 'leather-items', label: 'Leather Footwear & Goods' },
+              { id: 'abaya-collection', label: 'Abayas (26 Styles)' },
+              { id: 'shirts', label: 'Shirts' },
+              { id: 'pants', label: 'Pants & Trousers' },
+              { id: 'wallets', label: 'Wallets' },
+              { id: 'bags', label: 'Bags & Accessories' }
+            ].map(tab => {
+              const isActive = selectedCategory === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setSelectedCategory(tab.id)}
+                  style={{
+                    background: isActive ? '#191919' : '#FFFFFF',
+                    color: isActive ? '#FFFFFF' : '#191919',
+                    border: isActive ? '1px solid #191919' : '1px solid #E5DED3',
+                    padding: '8px 18px',
+                    borderRadius: '24px',
+                    fontSize: '12.5px',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    boxShadow: isActive ? '0 2px 8px rgba(25, 25, 25, 0.12)' : 'none'
+                  }}
+                >
+                  <span>{tab.label}</span>
+                </button>
+              );
+            })}
 
             <button
               type="button"
               onClick={() => setPdfModalOpen(true)}
+              className="btn-gold"
               style={{
-                background: 'linear-gradient(135deg, #d4a340 0%, #b8860b 100%)',
-                color: '#0d0d0d',
-                border: 'none',
-                padding: '9px 20px',
+                padding: '8px 18px',
                 borderRadius: '24px',
-                fontSize: '13px',
-                fontWeight: 700,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                boxShadow: '0 4px 14px rgba(212, 163, 64, 0.35)',
-                transition: 'all 0.2s ease'
+                fontSize: '12.5px',
+                fontWeight: 600
               }}
             >
-              <span>📄 View PDF (abaya.pdf)</span>
+              <span>📄 View abaya.pdf</span>
             </button>
           </div>
         </div>
       </section>
 
       {/* Main Catalogue Section */}
-      <section className="section-py" style={{ backgroundColor: '#faf9f6' }}>
-        <div className="container">
+      <section className="section-py" style={{ backgroundColor: '#F8F5EF', padding: '60px 20px 90px' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto' }}>
           {/* ABAYA PDF SHOWCASE BANNER (Visible on all or when abaya selected) */}
           {(selectedCategory === 'all' || selectedCategory === 'abaya-collection') && (
             <div style={{
-              background: 'linear-gradient(135deg, #1c1c20 0%, #141416 100%)',
-              border: '1px solid #333',
-              borderRadius: '12px',
-              padding: '24px 28px',
-              color: '#fff',
-              marginBottom: '32px',
+              background: '#FFFFFF',
+              border: '1px solid #E5DED3',
+              borderRadius: '8px',
+              padding: '28px 32px',
+              color: '#191919',
+              marginBottom: '36px',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
               flexWrap: 'wrap',
-              gap: '18px',
-              boxShadow: '0 8px 24px rgba(0,0,0,0.1)'
+              gap: '20px',
+              boxShadow: '0 4px 16px rgba(25, 25, 25, 0.04)'
             }}>
               <div style={{ maxWidth: '640px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                   <span style={{
-                    background: '#EA4335',
-                    color: '#fff',
+                    background: '#B89B62',
+                    color: '#FFFFFF',
                     padding: '2px 8px',
-                    borderRadius: '4px',
-                    fontSize: '11px',
-                    fontWeight: 800
+                    borderRadius: '2px',
+                    fontSize: '10.5px',
+                    fontWeight: 700,
+                    letterSpacing: '0.8px'
                   }}>
                     PDF CATALOGUE (26 STYLES)
                   </span>
-                  <span style={{ color: '#d4a340', fontSize: '13px', fontWeight: 600, letterSpacing: '0.5px' }}>
-                    ABAYA & ISLAMIC MODEST WEAR (abaya.pdf)
+                  <span style={{ color: '#77716A', fontSize: '12.5px', fontWeight: 600, letterSpacing: '0.5px' }}>
+                    ABAYA &amp; ISLAMIC MODEST WEAR (abaya.pdf)
                   </span>
                 </div>
-                <h3 style={{ margin: '0 0 6px', fontSize: '20px', fontFamily: 'Cinzel, Georgia, serif', fontWeight: 700 }}>
+                <h3 style={{ margin: '0 0 8px', fontSize: '20px', fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 700 }}>
                   Official Abaya Wholesale Line Sheet — All 26 Individual Styles
                 </h3>
-                <p style={{ margin: 0, fontSize: '13px', color: '#a1a1aa', lineHeight: 1.5 }}>
-                  Explore all 26 separate Abaya designs extracted from <strong>abaya.pdf</strong>. Download or preview our comprehensive 28 MB Abaya catalogue featuring Dubai Nida fabrics, embroidered open-front kimonos, kaftans, and matching sheilas for Gulf export.
+                <p style={{ margin: 0, fontSize: '13px', color: '#77716A', lineHeight: 1.6 }}>
+                  Explore all 26 separate Abaya designs extracted directly from <strong>abaya.pdf</strong>. Preview our comprehensive 28 MB Abaya catalogue featuring Dubai Nida fabrics, embroidered open-front kimonos, kaftans, and matching sheilas for Gulf export.
                 </p>
               </div>
 
-              <div style={{ display: 'flex', gap: '10px' }}>
+              <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
                 <button
                   type="button"
                   onClick={() => setPdfModalOpen(true)}
-                  style={{
-                    background: 'linear-gradient(135deg, #EA4335 0%, #b3261e 100%)',
-                    color: '#fff',
-                    border: 'none',
-                    padding: '12px 20px',
-                    borderRadius: '6px',
-                    fontSize: '13px',
-                    fontWeight: 700,
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    boxShadow: '0 4px 12px rgba(234, 67, 53, 0.4)'
-                  }}
+                  className="btn-primary"
+                  style={{ padding: '10px 18px', fontSize: '12.5px' }}
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                     <circle cx="12" cy="12" r="3"></circle>
                   </svg>
@@ -392,21 +314,10 @@ export default function Products({ onOpenQuoteModal }) {
                 <a
                   href={ABAYA_PDF_URL}
                   download="Classic_Edge_Abaya_Catalogue.pdf"
-                  style={{
-                    background: '#222228',
-                    color: '#e4e4e7',
-                    border: '1px solid #444',
-                    padding: '12px 18px',
-                    borderRadius: '6px',
-                    fontSize: '13px',
-                    fontWeight: 600,
-                    textDecoration: 'none',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px'
-                  }}
+                  className="btn-secondary"
+                  style={{ padding: '10px 18px', fontSize: '12.5px' }}
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                     <polyline points="7 10 12 15 17 10"></polyline>
                     <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -420,37 +331,51 @@ export default function Products({ onOpenQuoteModal }) {
           {/* LEATHER ITEMS SPOTLIGHT BANNER */}
           {selectedCategory === 'leather-items' && (
             <div style={{
-              background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(212, 163, 64, 0.12) 100%)',
-              border: '1px solid rgba(16, 185, 129, 0.4)',
-              borderRadius: '10px',
-              padding: '16px 22px',
-              marginBottom: '24px',
+              background: '#FFFFFF',
+              border: '1px solid #E5DED3',
+              borderRadius: '8px',
+              padding: '20px 26px',
+              marginBottom: '28px',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
               flexWrap: 'wrap',
-              gap: '12px'
+              gap: '12px',
+              boxShadow: '0 2px 10px rgba(25, 25, 25, 0.03)'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <span style={{ fontSize: '24px' }}>👞</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div style={{
+                  width: '36px',
+                  height: '36px',
+                  borderRadius: '4px',
+                  background: 'rgba(184, 155, 98, 0.15)',
+                  color: '#B89B62',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '18px'
+                }}>
+                  👞
+                </div>
                 <div>
-                  <strong style={{ fontSize: '14.5px', color: '#065f46' }}>
-                    Authentic Leather Goods Collection — Footwear, Slippers, Wallets, Bags & Belts
+                  <strong style={{ fontSize: '14.5px', color: '#191919' }}>
+                    Authentic Leather Goods Collection — Footwear, Slippers, Wallets, Bags &amp; Belts
                   </strong>
-                  <div style={{ fontSize: '12.5px', color: '#4b5563' }}>
+                  <div style={{ fontSize: '12.5px', color: '#77716A' }}>
                     Handcrafted in Ambur, Tamil Nadu using export-grade full-grain leathers and artisan sole construction.
                   </div>
                 </div>
               </div>
               <span style={{
-                background: '#10b981',
-                color: '#fff',
+                background: '#B89B62',
+                color: '#FFFFFF',
                 fontSize: '11px',
                 fontWeight: 700,
                 padding: '4px 10px',
-                borderRadius: '12px'
+                borderRadius: '2px',
+                letterSpacing: '0.5px'
               }}>
-                100% Genuine Leather
+                EXPORT READY
               </span>
             </div>
           )}
@@ -458,37 +383,39 @@ export default function Products({ onOpenQuoteModal }) {
           {/* SHIRTS SPOTLIGHT BANNER */}
           {selectedCategory === 'shirts' && (
             <div style={{
-              background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(59, 130, 246, 0.12) 100%)',
-              border: '1px solid rgba(37, 99, 235, 0.3)',
-              borderRadius: '10px',
-              padding: '16px 22px',
-              marginBottom: '24px',
+              background: '#FFFFFF',
+              border: '1px solid #E5DED3',
+              borderRadius: '8px',
+              padding: '20px 26px',
+              marginBottom: '28px',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
               flexWrap: 'wrap',
-              gap: '12px'
+              gap: '12px',
+              boxShadow: '0 2px 10px rgba(25, 25, 25, 0.03)'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <span style={{ fontSize: '24px' }}>👔</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <span style={{ fontSize: '20px' }}>👔</span>
                 <div>
-                  <strong style={{ fontSize: '14.5px', color: '#1d4ed8' }}>
-                    Export Shirting Collection — Executive Formal & Casual Resort Shirts
+                  <strong style={{ fontSize: '14.5px', color: '#191919' }}>
+                    Export Shirting Collection — Executive Formal &amp; Casual Resort Shirts
                   </strong>
-                  <div style={{ fontSize: '12.5px', color: '#4b5563' }}>
+                  <div style={{ fontSize: '12.5px', color: '#77716A' }}>
                     100% Giza Egyptian cotton dress shirts, European pure linen resort shirts, and double-mercerised polos.
                   </div>
                 </div>
               </div>
               <span style={{
-                background: '#2563eb',
-                color: '#fff',
+                background: '#B89B62',
+                color: '#FFFFFF',
                 fontSize: '11px',
                 fontWeight: 700,
                 padding: '4px 10px',
-                borderRadius: '12px'
+                borderRadius: '2px',
+                letterSpacing: '0.5px'
               }}>
-                Export Garments Desk
+                EXPORT GARMENTS DESK
               </span>
             </div>
           )}
@@ -496,37 +423,39 @@ export default function Products({ onOpenQuoteModal }) {
           {/* PANTS SPOTLIGHT BANNER */}
           {selectedCategory === 'pants' && (
             <div style={{
-              background: 'linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(139, 92, 246, 0.12) 100%)',
-              border: '1px solid rgba(124, 58, 237, 0.3)',
-              borderRadius: '10px',
-              padding: '16px 22px',
-              marginBottom: '24px',
+              background: '#FFFFFF',
+              border: '1px solid #E5DED3',
+              borderRadius: '8px',
+              padding: '20px 26px',
+              marginBottom: '28px',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
               flexWrap: 'wrap',
-              gap: '12px'
+              gap: '12px',
+              boxShadow: '0 2px 10px rgba(25, 25, 25, 0.03)'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <span style={{ fontSize: '24px' }}>👖</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <span style={{ fontSize: '20px' }}>👖</span>
                 <div>
-                  <strong style={{ fontSize: '14.5px', color: '#6d28d9' }}>
-                    Pants & Trousers Collection — Executive Wool, Chinos, Linen & Denim
+                  <strong style={{ fontSize: '14.5px', color: '#191919' }}>
+                    Pants &amp; Trousers Collection — Executive Wool, Chinos, Linen &amp; Denim
                   </strong>
-                  <div style={{ fontSize: '12.5px', color: '#4b5563' }}>
+                  <div style={{ fontSize: '12.5px', color: '#77716A' }}>
                     Single-pleated formal trousers, stretch cotton chinos, drawstring summer linen pants, and heavy raw denim.
                   </div>
                 </div>
               </div>
               <span style={{
-                background: '#7c3aed',
-                color: '#fff',
+                background: '#B89B62',
+                color: '#FFFFFF',
                 fontSize: '11px',
                 fontWeight: 700,
                 padding: '4px 10px',
-                borderRadius: '12px'
+                borderRadius: '2px',
+                letterSpacing: '0.5px'
               }}>
-                Custom Tailoring Feasible
+                CUSTOM TAILORING FEASIBLE
               </span>
             </div>
           )}
@@ -534,37 +463,52 @@ export default function Products({ onOpenQuoteModal }) {
           {/* REAL FOOTWEAR SPOTLIGHT BANNER */}
           {(selectedCategory === 'all' || selectedCategory === 'real-shoes' || selectedCategory === 'leather-shoes') && (
             <div style={{
-              background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(212, 163, 64, 0.08) 100%)',
-              border: '1px solid rgba(16, 185, 129, 0.3)',
-              borderRadius: '10px',
-              padding: '14px 20px',
-              marginBottom: '24px',
+              background: '#FFFFFF',
+              border: '1px solid #E5DED3',
+              borderRadius: '8px',
+              padding: '18px 24px',
+              marginBottom: '28px',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
               flexWrap: 'wrap',
-              gap: '12px'
+              gap: '12px',
+              boxShadow: '0 2px 10px rgba(25, 25, 25, 0.03)'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <span style={{ fontSize: '20px' }}>👞</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div style={{
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '4px',
+                  background: 'rgba(184, 155, 98, 0.15)',
+                  color: '#B89B62',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '16px'
+                }}>
+                  👞
+                </div>
                 <div>
-                  <strong style={{ fontSize: '13.5px', color: '#065f46' }}>
+                  <strong style={{ fontSize: '14px', color: '#191919' }}>
                     Authentic Factory Floor Footwear Stock (31 Real Photos)
                   </strong>
-                  <div style={{ fontSize: '12px', color: '#4b5563' }}>
+                  <div style={{ fontSize: '12px', color: '#77716A' }}>
                     Each photo is taken directly from our production warehouse. Click on any card image to view in high-resolution zoom.
                   </div>
                 </div>
               </div>
               <span style={{
-                background: '#10b981',
-                color: '#fff',
-                fontSize: '11px',
+                background: '#191919',
+                border: '1px solid #B89B62',
+                color: '#F8F5EF',
+                fontSize: '10.5px',
                 fontWeight: 700,
-                padding: '4px 10px',
-                borderRadius: '12px'
+                padding: '3px 9px',
+                borderRadius: '2px',
+                letterSpacing: '0.5px'
               }}>
-                Verified Manufacturer Stock
+                VERIFIED MAKER STOCK
               </span>
             </div>
           )}
@@ -580,10 +524,6 @@ export default function Products({ onOpenQuoteModal }) {
                   aria-selected={selectedCategory === cat.id}
                   className={`category-pill-btn ${selectedCategory === cat.id ? 'active' : ''}`}
                   onClick={() => setSelectedCategory(cat.id)}
-                  style={{
-                    fontWeight: (cat.id === 'real-shoes' || cat.id === 'abaya-collection') ? 700 : 500,
-                    borderColor: cat.id === 'real-shoes' ? '#10b981' : cat.id === 'abaya-collection' ? '#EA4335' : undefined
-                  }}
                 >
                   {cat.name}
                 </button>

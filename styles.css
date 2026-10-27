@@ -1,30 +1,32 @@
 /* CLASSIC EDGE ATELIER — LUXURY EXPORT DESIGN SYSTEM */
 :root {
-  --ink: #0b0b0d;
-  --surface-dark: #121215;
-  --surface-elevated: #1a1a20;
-  --surface-card: #16161b;
-  --border-dark: #2a2a32;
-  --border-subtle: rgba(255, 255, 255, 0.08);
+  --ink: #191919;
+  --bg-primary: #F8F5EF;
+  --bg-secondary: #EDE5D8;
+  --surface-dark: #FFFFFF;
+  --surface-elevated: #EDE5D8;
+  --surface-card: #FFFFFF;
+  --border-dark: #E5DED3;
+  --border-subtle: rgba(25, 25, 25, 0.08);
   
-  --gold-primary: #c5a059;
-  --gold-light: #f5e2b8;
-  --gold-deep: #9e7b35;
-  --gold-border: rgba(197, 160, 89, 0.35);
-  --gold-glow: rgba(197, 160, 89, 0.18);
+  --gold-primary: #B89B62;
+  --gold-light: #D9C59F;
+  --gold-deep: #9E824C;
+  --gold-border: rgba(184, 155, 98, 0.35);
+  --gold-glow: rgba(184, 155, 98, 0.15);
   
-  --text-main: #f5f3ef;
-  --text-muted: #a6a39d;
-  --text-dim: #7a766e;
-  --whatsapp: #25D366;
+  --text-main: #191919;
+  --text-muted: #77716A;
+  --text-dim: #968F87;
+  --whatsapp: #128C7E;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: #F8F5EF; }
 body { 
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
-  color: var(--text-main); 
-  background: var(--ink); 
+  color: #191919; 
+  background: #F8F5EF; 
   overflow-x: hidden; 
   line-height: 1.6; 
   min-height: 100vh;

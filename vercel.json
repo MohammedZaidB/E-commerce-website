@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    { "source": "/catalog.html", "destination": "/products" },
+    { "source": "/catalog", "destination": "/products" },
+    { "source": "/products.html", "destination": "/products" },
+    { "source": "/about.html", "destination": "/about" },
+    { "source": "/contact.html", "destination": "/contact" },
+    { "source": "/private-label.html", "destination": "/private-label" },
+    { "source": "/wholesale-export.html", "destination": "/wholesale-export" },
+    { "source": "/((?!assets|images-and-pdf|public|api).*)", "destination": "/index.html" }
+  ]
+}

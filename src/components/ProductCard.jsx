@@ -42,20 +42,22 @@ export default function ProductCard({ product, onEnquire, onZoom, onViewPdf }) {
             position: 'absolute',
             top: '8px',
             left: '8px',
-            background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
-            color: '#fff',
+            background: '#191919',
+            border: '1px solid #B89B62',
+            color: '#F8F5EF',
             fontSize: '9.5px',
-            fontWeight: 800,
-            letterSpacing: '0.4px',
-            padding: '3px 7px',
-            borderRadius: '4px',
-            boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
+            fontWeight: 700,
+            letterSpacing: '0.6px',
+            padding: '3px 8px',
+            borderRadius: '2px',
+            boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
             display: 'flex',
             alignItems: 'center',
-            gap: '3px',
+            gap: '4px',
             zIndex: 2
           }}>
-            <span>📸 REAL PHOTO</span>
+            <span style={{ color: '#B89B62' }}>✦</span>
+            <span>ATELIER SAMPLE</span>
           </div>
         )}
 
@@ -65,20 +67,20 @@ export default function ProductCard({ product, onEnquire, onZoom, onViewPdf }) {
             position: 'absolute',
             top: '8px',
             left: '8px',
-            background: 'linear-gradient(135deg, #EA4335 0%, #C5221F 100%)',
-            color: '#fff',
+            background: '#B89B62',
+            color: '#FFFFFF',
             fontSize: '9.5px',
-            fontWeight: 800,
-            letterSpacing: '0.4px',
-            padding: '3px 7px',
-            borderRadius: '4px',
-            boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
+            fontWeight: 700,
+            letterSpacing: '0.6px',
+            padding: '3px 8px',
+            borderRadius: '2px',
+            boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
             display: 'flex',
             alignItems: 'center',
-            gap: '3px',
+            gap: '4px',
             zIndex: 2
           }}>
-            <span>📄 {product.modelCode || 'ABAYA.PDF'}</span>
+            <span>📄 {product.modelCode || 'ABAYA'}</span>
           </div>
         )}
 
@@ -93,7 +95,7 @@ export default function ProductCard({ product, onEnquire, onZoom, onViewPdf }) {
             position: 'absolute',
             bottom: '8px',
             right: '8px',
-            background: 'rgba(0,0,0,0.65)',
+            background: 'rgba(25,25,25,0.7)',
             color: '#fff',
             borderRadius: '50%',
             width: '26px',
@@ -135,7 +137,7 @@ export default function ProductCard({ product, onEnquire, onZoom, onViewPdf }) {
         {/* Model Code & Specs line */}
         <div className="product-model-code">
           <span>{product.modelCode || 'CE-EXPORT'}</span>
-          <span style={{ background: 'none', color: '#8c8577', padding: 0 }}>
+          <span style={{ background: 'none', color: '#77716A', padding: 0 }}>
             {product.pdfReference ? `• ${product.pdfReference}` : '• Ready Export Stock'}
           </span>
         </div>
@@ -147,10 +149,12 @@ export default function ProductCard({ product, onEnquire, onZoom, onViewPdf }) {
             className="product-card-btn"
             onClick={handleAddToCart}
             style={{
-              background: isAdded ? '#10b981' : 'linear-gradient(135deg, #d4a340 0%, #b8860b 100%)',
-              color: '#0d0d0d',
-              fontWeight: 700,
-              border: 'none'
+              background: isAdded ? '#128C7E' : '#191919',
+              color: '#FFFFFF',
+              fontWeight: 600,
+              border: isAdded ? '1px solid #128C7E' : '1px solid #191919',
+              borderRadius: '2px',
+              transition: 'all 0.2s ease'
             }}
             aria-label={`Add ${product.name} to cart`}
           >
@@ -163,7 +167,7 @@ export default function ProductCard({ product, onEnquire, onZoom, onViewPdf }) {
               </>
             ) : (
               <>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <circle cx="9" cy="21" r="1"></circle>
                   <circle cx="20" cy="21" r="1"></circle>
                   <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
@@ -178,9 +182,12 @@ export default function ProductCard({ product, onEnquire, onZoom, onViewPdf }) {
             className="product-card-btn"
             onClick={() => onEnquire(product)}
             style={{
-              background: 'transparent',
-              color: 'var(--ink, #111)',
-              border: '1px solid #d5d0c5'
+              background: '#FFFFFF',
+              color: '#191919',
+              border: '1px solid #E5DED3',
+              borderRadius: '2px',
+              fontWeight: 600,
+              transition: 'all 0.2s ease'
             }}
             aria-label={`Enquire about wholesale ${product.name}`}
           >
