@@ -36,7 +36,7 @@ const FEATURED_PRODUCTS = [
     priceNum: 1600,
     category: 'Abaya Collection',
     subType: 'Luxury Dubai Abayas',
-    image: 'https://images.unsplash.com/photo-1585728748178-f742f56d4a71?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80',
     modelCode: 'CE-ABY-001'
   },
   {

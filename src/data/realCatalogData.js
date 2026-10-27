@@ -14,8 +14,8 @@ export const REAL_SHOE_IMAGES = Object.entries(shoeImageModules).map(([path, url
   };
 });
 
-// 2. Abaya PDF url
-export const ABAYA_PDF_URL = '/images and pdf/abaya.pdf';
+// 2. Abaya PDF url (stored in public/images-and-pdf/ for reliable Vercel and local loading)
+export const ABAYA_PDF_URL = '/images-and-pdf/abaya.pdf';
 
 // Curated names and descriptions for real footwear models
 const SHOE_TITLES = [
@@ -343,23 +343,19 @@ export const ABAYA_PRODUCTS = ABAYA_DATA_26.map((item, index) => {
     price: item.price,
     priceNum: item.priceNum,
     image: `https://images.unsplash.com/photo-${[
-      '1585728748178-f742f56d4a71',
-      '1596783049557-61e8886caab2',
+      '1583391733956-3750e0ff4e8b',
+      '1572804013309-59a88b7e92f1',
       '1567401893414-76b7b1e5a7a5',
       '1558769132-cb1aea458c5e',
-      '1584589167171-541ce45f1eea',
-      '1539109136881-3be0616acf4b',
-      '1515886657613-9f3515b0c78f',
-      '1529139574466-a303027c1d8b',
-      '1490481651871-ab68de25d43d',
-      '1496747611176-843222e1e57c',
       '1509631179647-0177331693ae',
-      '1485968579580-b6d095142e6e',
-      '1552874869-5c39ec9288dc',
-      '1525507119028-ed4c629a60a3',
+      '1539109136881-3be0616acf4b',
+      '1490481651871-ab68de25d43d',
+      '1551803091-e20673f15770',
+      '1496747611176-843222e1e57c',
       '1544441893-675973e31985',
-      '1508427953056-b00b8d78ebf5',
+      '1485968579580-b6d095142e6e',
       '1516762689617-e1cffcef479d',
+      '1525507119028-ed4c629a60a3',
       '1548883354-7622d03aca27',
       '1502716119720-b23a93e5fe1b',
       '1483985988355-763728e1935b',
@@ -368,7 +364,11 @@ export const ABAYA_PRODUCTS = ABAYA_DATA_26.map((item, index) => {
       '1534528741775-53994a69daeb',
       '1524504388940-b1c1722653e1',
       '1506794778202-cad84cf45f1d',
-      '1517841905240-472988babdf9'
+      '1517841905240-472988babdf9',
+      '1508427953056-b00b8d78ebf5',
+      '1552874869-5c39ec9288dc',
+      '1550614000-4895a10e1bfd',
+      '1518049362265-d5b2a6467637'
     ][index % 26]}?auto=format&fit=crop&w=800&q=80`,
     pdfPage: pageNum,
     pdfReference: `abaya.pdf (Page ${pageNum})`,

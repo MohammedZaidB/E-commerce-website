@@ -30,7 +30,7 @@ async function ensurePdfJs() {
  * Extracts all 26 individual page images from abaya.pdf
  * Calls onPageProgress(pageNumber, dataUrl) as each page completes rendering
  */
-export async function extractAllAbayaImages(pdfUrl = '/images and pdf/abaya.pdf', onPageProgress = null) {
+export async function extractAllAbayaImages(pdfUrl = '/images-and-pdf/abaya.pdf', onPageProgress = null) {
   const safePdfUrl = encodeURI(pdfUrl);
 
   // 1. Check in-memory cache first

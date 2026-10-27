@@ -84,11 +84,6 @@ export default function ProductCard({ product, onEnquire, onZoom, onViewPdf }) {
           </div>
         )}
 
-        {/* Category Overlay */}
-        <div className="product-badge-overlay">
-          <span className="badge-dark">{product.categoryLabel}</span>
-        </div>
-
         {/* Zoom Hint Icon */}
         {isZoomable && (
           <div style={{
@@ -118,9 +113,11 @@ export default function ProductCard({ product, onEnquire, onZoom, onViewPdf }) {
 
       {/* Product Content with short 2-3 line detail */}
       <div className="product-content">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
-          <span className="product-subtag">{product.subType}</span>
-          <span className="product-price-badge">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '6px', gap: '8px' }}>
+          <span className="product-subtag" style={{ flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            {product.subType}
+          </span>
+          <span className="product-price-badge" style={{ whiteSpace: 'nowrap', flexShrink: 0 }}>
             {product.price || '₹ 2,499'}
           </span>
         </div>
