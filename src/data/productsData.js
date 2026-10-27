@@ -8,7 +8,7 @@ export { ABAYA_PDF_URL };
 export const CATEGORIES = [
   { id: 'all', name: 'All Collections' },
   { id: 'leather-items', name: '👞 Leather Items' },
-  { id: 'abaya-collection', name: '🧕 Abayas (27 Styles from abaya.pdf)' },
+  { id: 'abaya-collection', name: '🧕 Abayas (26 Styles from abaya.pdf)' },
   { id: 'shirts', name: '👔 Shirts' },
   { id: 'pants', name: '👖 Pants & Trousers' },
   { id: 'real-shoes', name: 'Factory Shoes (31 Photos)' },

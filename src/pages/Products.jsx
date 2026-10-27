@@ -19,7 +19,7 @@ export default function Products({ onOpenQuoteModal }) {
   const [pdfModalOpen, setPdfModalOpen] = useState(false);
   const [zoomProduct, setZoomProduct] = useState(null);
 
-  // Extract / load all 27 images from abaya.pdf progressively
+  // Extract / load all 26 images from abaya.pdf progressively
   useEffect(() => {
     let isMounted = true;
     extractAllAbayaImages(ABAYA_PDF_URL, (pageNum, dataUrl) => {
@@ -28,7 +28,7 @@ export default function Products({ onOpenQuoteModal }) {
           ...prev,
           [pageNum]: dataUrl
         }));
-        setExtractedPagesCount((c) => Math.min(27, c + 1));
+        setExtractedPagesCount((c) => Math.min(26, c + 1));
       }
     })
       .then((imgs) => {
@@ -250,7 +250,7 @@ export default function Products({ onOpenQuoteModal }) {
                 transition: 'all 0.2s ease'
               }}
             >
-              <span>🧕 Abayas (27 Styles)</span>
+              <span>🧕 Abayas (26 Styles)</span>
             </button>
 
             <button
@@ -349,17 +349,17 @@ export default function Products({ onOpenQuoteModal }) {
                     fontSize: '11px',
                     fontWeight: 800
                   }}>
-                    PDF CATALOGUE (27 STYLES)
+                    PDF CATALOGUE (26 STYLES)
                   </span>
                   <span style={{ color: '#d4a340', fontSize: '13px', fontWeight: 600, letterSpacing: '0.5px' }}>
                     ABAYA & ISLAMIC MODEST WEAR (abaya.pdf)
                   </span>
                 </div>
                 <h3 style={{ margin: '0 0 6px', fontSize: '20px', fontFamily: 'Cinzel, Georgia, serif', fontWeight: 700 }}>
-                  Official Abaya Wholesale Line Sheet — All 27 Individual Styles
+                  Official Abaya Wholesale Line Sheet — All 26 Individual Styles
                 </h3>
                 <p style={{ margin: 0, fontSize: '13px', color: '#a1a1aa', lineHeight: 1.5 }}>
-                  Explore all 27 separate Abaya designs extracted from <strong>abaya.pdf</strong>. Download or preview our comprehensive 28 MB Abaya catalogue featuring Dubai Nida fabrics, embroidered open-front kimonos, kaftans, and matching sheilas for Gulf export.
+                  Explore all 26 separate Abaya designs extracted from <strong>abaya.pdf</strong>. Download or preview our comprehensive 28 MB Abaya catalogue featuring Dubai Nida fabrics, embroidered open-front kimonos, kaftans, and matching sheilas for Gulf export.
                 </p>
               </div>
 

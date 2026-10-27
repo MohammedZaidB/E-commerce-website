@@ -27,7 +27,7 @@ async function ensurePdfJs() {
 }
 
 /**
- * Extracts all 27 individual page images from abaya.pdf
+ * Extracts all 26 individual page images from abaya.pdf
  * Calls onPageProgress(pageNumber, dataUrl) as each page completes rendering
  */
 export async function extractAllAbayaImages(pdfUrl = '/images and pdf/abaya.pdf', onPageProgress = null) {
@@ -35,9 +35,9 @@ export async function extractAllAbayaImages(pdfUrl = '/images and pdf/abaya.pdf'
 
   // 1. Check in-memory cache first
   const cachedKeys = Object.keys(memoryCache);
-  if (cachedKeys.length >= 27) {
+  if (cachedKeys.length >= 26) {
     if (onPageProgress) {
-      for (let p = 1; p <= 27; p++) {
+      for (let p = 1; p <= 26; p++) {
         if (memoryCache[p]) onPageProgress(p, memoryCache[p]);
       }
     }
@@ -49,10 +49,10 @@ export async function extractAllAbayaImages(pdfUrl = '/images and pdf/abaya.pdf'
     const stored = sessionStorage.getItem('classic_edge_abaya_pages');
     if (stored) {
       const parsed = JSON.parse(stored);
-      if (parsed && Object.keys(parsed).length >= 27) {
+      if (parsed && Object.keys(parsed).length >= 26) {
         memoryCache = parsed;
         if (onPageProgress) {
-          for (let p = 1; p <= 27; p++) {
+          for (let p = 1; p <= 26; p++) {
             if (memoryCache[p]) onPageProgress(p, memoryCache[p]);
           }
         }
@@ -77,7 +77,7 @@ export async function extractAllAbayaImages(pdfUrl = '/images and pdf/abaya.pdf'
     });
 
     const pdf = await loadingTask.promise;
-    const totalPages = Math.min(pdf.numPages, 27);
+    const totalPages = Math.min(pdf.numPages, 26);
 
     for (let pageNum = 1; pageNum <= totalPages; pageNum++) {
       try {
