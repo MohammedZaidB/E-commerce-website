@@ -35,5 +35,6 @@ Thumbs.db
 *.userosscache
 *.sln.docstates
 
-*.pdf
-public/images-and-pdf/
+# Assets
+# Note: public/images-and-pdf/abaya.pdf is tracked so Vercel can render the Abaya catalogue
+

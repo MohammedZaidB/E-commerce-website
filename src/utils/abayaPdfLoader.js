@@ -125,7 +125,7 @@ export async function extractAllAbayaImages(pdfUrl = '/images-and-pdf/abaya.pdf'
 /**
  * Render a single high-resolution page from abaya.pdf on demand (for Zoom lightbox)
  */
-export async function renderHighResAbayaPage(pageNum, pdfUrl = '/images and pdf/abaya.pdf') {
+export async function renderHighResAbayaPage(pageNum, pdfUrl = '/images-and-pdf/abaya.pdf') {
   const safePdfUrl = encodeURI(pdfUrl);
   try {
     const pdfjs = await ensurePdfJs();
